@@ -50,4 +50,4 @@ $(function() {
     
     // Init.
     pChart.render();
-});z
+});

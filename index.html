@@ -170,4 +170,26 @@
 <div class="footer"></div>
 </div>
 </body>
+
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-messaging.js"></script>
+
+<script>
+  // Initialize Firebase
+  var firebase = require("firebase/app");
+require("firebase/auth");
+require("firebase/database");
+  var config = {
+    apiKey: "AIzaSyD5DUjQdsa-dw6KM4Gr9vrG23bd2NqWCjg",
+    authDomain: "realtime-chat-6aa14.firebaseapp.com",
+    databaseURL: "https://realtime-chat-6aa14.firebaseio.com",
+    projectId: "realtime-chat-6aa14",
+    storageBucket: "realtime-chat-6aa14.appspot.com",
+    messagingSenderId: "220832386679"
+  };
+  firebase.initializeApp(config);
+</script>
 </html>

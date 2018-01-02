@@ -4,7 +4,7 @@
 	<style>
 	
 	.canvas {
-   
+    backgroun : durl('images/plane-toys-5.jpg')
     width:300px;
     height:300px;
 	background-size:     cover;                      /* <------ */
@@ -98,8 +98,8 @@
 
  //get the canvas
 var canvas = $('div.canvas');
-var backgroundImage = thumbnail('images/Mario-Transparent-Background.png', 300,300); //canvas.css('background');
-console.log(backgroundImage);
+//var backgroundImage =  canvas.css('background', url('images/plane-toys-5.jpg'));
+//`waconsole.log(backgroundImage);
 //$(backgroundImage).css('background',"url('images/plane-toys-5.jpg')");
 //$(backgroundImage).css('background-size',    'cover');
 //$(backgroundImage).css('background-repeat','no-repeat');
@@ -128,8 +128,8 @@ for(var i = 0; i < row; i++){
         //note that calculate the em unit for more flexible
         //font-size
         cell.find('.front')
-            .css('background', "url('" + backgroundImage.replace(/(\r\n|\n|\r)/gm, "");
-			.css('background-size',    'cover')
+            .css('background',  url('images/gift-box-surprise-template_23-2147494116.jpg'));
+			//.css('background-size',    'cover')
             .css('background-position', -(j * colWidth) + 'px ' + -(i * rowHeight) + 'px');
         //register click handler for the cell
 		 

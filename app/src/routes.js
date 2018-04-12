@@ -1,4 +1,16 @@
 export default [
+    {
+        path: '/home/',
+        component: require('./components/Home.vue')
+    },
+    {
+        path: '/play/',
+        component: require('./components/Play.vue')
+    },
+    {
+        path: '/rankings/',
+        component: require('./components/Rankings.vue')
+    },
   {
       path: '/about/',
       component: require('./pages/about.vue')
@@ -10,5 +22,13 @@ export default [
   {
       path: '/dynamic-route/blog/:blogId/post/:postId/',
       component: require('./pages/dynamic-route.vue')
-  }
+  },
+  {
+    path: '/login/',
+    component: require('./components/Login.vue')
+},
+{
+    path: '/profile/',
+    component: require('./components/Profile.vue')
+}
 ]

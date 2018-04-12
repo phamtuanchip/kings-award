@@ -27,6 +27,13 @@ import App from './app'
 // Init F7 Vue Plugin
 Vue.use(Framework7Vue)
 
+// Import BootstrapVue and css
+import BootstrapVue from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+// Init BootstrapVue Plugin
+Vue.use(BootstrapVue);
+
 // Init App
 new Vue({
   el: '#app',

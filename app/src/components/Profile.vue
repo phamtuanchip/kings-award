@@ -98,24 +98,17 @@
        
    </div>
 </div>
-
+ <children />
  </f7-page>
 </template>
 <script>
+import Children from '@/components/Children'
 export default {
-  /** 
-   
-              $(function() {
-    $('#profile-image1').on('click', function() {
-        $('#profile-image-upload').click();
-    });
-});       
-              
-       
-   * 
-  */
+  components: {Children}
 }
 </script>
+
+ 
 <style scoped>
               input.hidden {
     position: absolute;

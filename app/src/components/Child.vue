@@ -45,7 +45,10 @@
         <f7-label>Description</f7-label>
         <f7-input v-model="item.Description" type="textarea" placeholder="Textarea"></f7-input>
       </f7-list-item>
-      <f7-col><f7-button big fill color="green" @click="save" >Save</f7-button></f7-col>
+      <f7-col>
+        <f7-button big fill color="green" @click="save" >Save</f7-button>
+        <f7-button big fill color="green" @click="cancel" >Cancel</f7-button>
+      </f7-col>
     </f7-list>
   </div>
 </div>
@@ -96,7 +99,7 @@ export default {
       })
     },
     cancel: function () {
-       
+       this.isEdit = false;
     }
   }
 }

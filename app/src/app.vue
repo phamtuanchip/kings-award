@@ -30,6 +30,7 @@
             <f7-list>
               <f7-list-item link="/home/" title="Home" link-view="#main-view" link-close-panel></f7-list-item> 
               <f7-list-item link="/play/" title="Play" link-view="#main-view" link-close-panel></f7-list-item>
+              <f7-list-item link="/awards/" title="Awards" link-view="#main-view" link-close-panel></f7-list-item>
               <f7-list-item link="/rankings/" title="Rankings" link-view="#main-view" link-close-panel></f7-list-item>
               <f7-list-item link="/about/" title="About" link-view="#main-view" link-close-panel></f7-list-item>
               <f7-list-item link="/form/" title="Form" link-view="#main-view" link-close-panel></f7-list-item>

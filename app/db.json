@@ -695,10 +695,10 @@
     {
       "Id": 1,
       "Name": "Nhat Minh",
-      "Avatar": "https://lorempixel.com/600/300/food/5/",
+      "Avatar": "https://lorempixel.com/600/300/sports/1/",
       "Year": 2011,
       "DOB": "2018-03-12",
-      "Description": "Description",
+      "Description": "Chào bí",
       "Gender": 1,
       "archives": [],
       "id": 1
@@ -706,7 +706,7 @@
     {
       "Id": 2,
       "Name": "Minh Ha",
-      "Avatar": "https://lorempixel.com/600/300/food/4/",
+      "Avatar": "https://lorempixel.com/600/300/sports/2/",
       "Year": 2015,
       "DOB": "2018-04-12",
       "Description": "hello",
@@ -718,16 +718,40 @@
   "awards": [
     {
       "Id": 1,
-      "From": "",
-      "To": "",
-      "Gift": "https://lorempixel.com/600/300/food/10/",
+      "Title":"Phần thưởng tháng",
+      "SubTitle":"Tháng chăm ngoan",
+      "From": "2018-04-12",
+      "To": "2018-04-26",
+      "Gift": "http://lorempixel.com/88/88/abstract/1",
       "TargetPoint": 100
     },
     {
       "Id": 2,
-      "From": "",
-      "To": "",
-      "Gift": "https://lorempixel.com/600/300/food/11/",
+      "Title":"Phần thưởng tháng",
+      "SubTitle":"Tháng chăm ngoan",
+      "From": "2018-04-26",
+      "To": "2018-04-30",
+      "Gift": "http://lorempixel.com/88/88/abstract/2",
+      "TargetPoint": 10
+    }
+    ,
+    {
+      "Id": 3,
+      "Title":"Phần thưởng tháng",
+      "SubTitle":"Tháng chăm ngoan",
+      "From": "2018-04-26",
+      "To": "2018-04-30",
+      "Gift": "http://lorempixel.com/88/88/abstract/2",
+      "TargetPoint": 10
+    }
+    ,
+    {
+      "Id": 4,
+      "Title":"Phần thưởng tháng",
+      "SubTitle":"Tháng chăm ngoan",
+      "From": "2018-04-26",
+      "To": "2018-04-30",
+      "Gift": "http://lorempixel.com/88/88/abstract/2",
       "TargetPoint": 10
     }
   ],

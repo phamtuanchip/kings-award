@@ -31,4 +31,9 @@ export default [
     path: '/profile/',
     component: require('./components/Profile.vue')
 }
+,
+{
+    path: '/awards/',
+    component: require('./components/Awards.vue')
+}
 ]

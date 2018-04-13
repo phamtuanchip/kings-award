@@ -692,25 +692,147 @@
     }
   ],
   "children": [
-    {"Id" : 1, "Name" : "Nhat Minh", "Avatar" : "https://lorempixel.com/600/300/food/5/", "Year": 2011, "DOB" : "12-03-2011", "Description":""},
-    {"Id" : 2, "Name" : "Minh Ha", "Avatar" : "https://lorempixel.com/600/300/food/4/", "Year": 2015, "DOB" : "27-12-2015", "Description":""}
+    {
+      "Id": 1,
+      "Name": "Nhat Minh",
+      "Avatar": "https://lorempixel.com/600/300/food/5/",
+      "Year": 2011,
+      "DOB": "2018-03-12",
+      "Description": "Description",
+      "Gender": 1,
+      "archives": [],
+      "id": 1
+    },
+    {
+      "Id": 2,
+      "Name": "Minh Ha",
+      "Avatar": "https://lorempixel.com/600/300/food/4/",
+      "Year": 2015,
+      "DOB": "2018-04-12",
+      "Description": "hello",
+      "Gender": 1,
+      "archives": [],
+      "id": 2
+    }
   ],
-  "awards" : [{"Id":1, "From": "", "To": "", "Gift": "https://lorempixel.com/600/300/food/10/", "TargetPoint" : 100 }, {"Id":2, "From": "", "To": "", "Gift": "https://lorempixel.com/600/300/food/11/", "TargetPoint" : 10 }] ,
-  "archives":[
-    {"childrenId":1, "awardsId": 1, "ArchivePoints": 10, "TaskDone": [{"TaskId": 2, "Point": 2}, {"TaskId": 2, "Point": -1}]},
-    {"childrenId":1, "awardsId": 3, "ArchivePoints": 10, "TaskDone": [{"TaskId": 1, "Point": 2}, {"TaskId": 2, "Point": -1}]}
+  "awards": [
+    {
+      "Id": 1,
+      "From": "",
+      "To": "",
+      "Gift": "https://lorempixel.com/600/300/food/10/",
+      "TargetPoint": 100
+    },
+    {
+      "Id": 2,
+      "From": "",
+      "To": "",
+      "Gift": "https://lorempixel.com/600/300/food/11/",
+      "TargetPoint": 10
+    }
+  ],
+  "archives": [
+    {
+      "childrenId": 1,
+      "awardsId": 1,
+      "ArchivePoints": 10,
+      "TaskDone": [
+        {
+          "TaskId": 2,
+          "Point": 2
+        },
+        {
+          "TaskId": 2,
+          "Point": -1
+        }
+      ]
+    },
+    {
+      "childrenId": 1,
+      "awardsId": 3,
+      "ArchivePoints": 10,
+      "TaskDone": [
+        {
+          "TaskId": 1,
+          "Point": 2
+        },
+        {
+          "TaskId": 2,
+          "Point": -1
+        }
+      ]
+    }
   ],
   "tasks": [
-    {"Id":1, "Name":"Lau nhà", "DefaultPoint": 1, "ManualPoint" : 0},
-    {"Id":1, "Name":"Rửa bát", "DefaultPoint": 3, "ManualPoint" : 0}
+    {
+      "Id": 1,
+      "Name": "Lau nhà",
+      "DefaultPoint": 1,
+      "ManualPoint": 0
+    },
+    {
+      "Id": 1,
+      "Name": "Rửa bát",
+      "DefaultPoint": 3,
+      "ManualPoint": 0
+    }
   ],
   "activities": [
-    {"Id": 1, "DateTime": "2018-04-11 12:30", "Title":"Item tile", "SubTitle": "Item sub title", "ItemText":"Item text here", "ItemInerText":"Item in box content"},
-    {"Id": 2, "DateTime": "2018-04-12 13:30", "Title":"Item tile2", "SubTitle": "Item sub title2", "ItemText":"Item text here2", "ItemInerText":"Item in box content2"},
-    {"Id": 3, "DateTime": "2018-04-13 14:30", "Title":"Item tile2", "SubTitle": "Item sub title2", "ItemText":"Item text here2", "ItemInerText":"Item in box content2"},
-    {"Id": 4, "DateTime": "2018-04-13 15:30", "Title":"Item tile2", "SubTitle": "Item sub title2", "ItemText":"Item text here2", "ItemInerText":"Item in box content2"},
-    {"Id": 5, "DateTime": "2018-04-13 16:30", "Title":"Item tile2", "SubTitle": "Item sub title2", "ItemText":"Item text here2", "ItemInerText":"Item in box content2"},
-    {"Id": 6, "DateTime": "2018-04-13 17:30", "Title":"Item tile2", "SubTitle": "Item sub title2", "ItemText":"Item text here2", "ItemInerText":"Item in box content2"},
-    {"Id": 7, "DateTime": "2018-04-13 18:30", "Title":"Item tile2", "SubTitle": "Item sub title2", "ItemText":"Item text here2", "ItemInerText":"Item in box content2"}
+    {
+      "Id": 1,
+      "DateTime": "2018-04-11 12:30",
+      "Title": "Item tile",
+      "SubTitle": "Item sub title",
+      "ItemText": "Item text here",
+      "ItemInerText": "Item in box content"
+    },
+    {
+      "Id": 2,
+      "DateTime": "2018-04-12 13:30",
+      "Title": "Item tile2",
+      "SubTitle": "Item sub title2",
+      "ItemText": "Item text here2",
+      "ItemInerText": "Item in box content2"
+    },
+    {
+      "Id": 3,
+      "DateTime": "2018-04-13 14:30",
+      "Title": "Item tile2",
+      "SubTitle": "Item sub title2",
+      "ItemText": "Item text here2",
+      "ItemInerText": "Item in box content2"
+    },
+    {
+      "Id": 4,
+      "DateTime": "2018-04-13 15:30",
+      "Title": "Item tile2",
+      "SubTitle": "Item sub title2",
+      "ItemText": "Item text here2",
+      "ItemInerText": "Item in box content2"
+    },
+    {
+      "Id": 5,
+      "DateTime": "2018-04-13 16:30",
+      "Title": "Item tile2",
+      "SubTitle": "Item sub title2",
+      "ItemText": "Item text here2",
+      "ItemInerText": "Item in box content2"
+    },
+    {
+      "Id": 6,
+      "DateTime": "2018-04-13 17:30",
+      "Title": "Item tile2",
+      "SubTitle": "Item sub title2",
+      "ItemText": "Item text here2",
+      "ItemInerText": "Item in box content2"
+    },
+    {
+      "Id": 7,
+      "DateTime": "2018-04-13 18:30",
+      "Title": "Item tile2",
+      "SubTitle": "Item sub title2",
+      "ItemText": "Item text here2",
+      "ItemInerText": "Item in box content2"
+    }
   ]
 }

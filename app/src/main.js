@@ -37,6 +37,11 @@ Vue.use(BootstrapVue);
 import store from './service/store'
 import api from './service/backend-api'
 import appUtil from './service/app-util'
+Vue.use(require("vue-moment"));
+
+window.Store = store
+Vue.prototype.api = api
+Vue.prototype.appUtil = appUtil
 
 // Init App
 new Vue({

@@ -1,88 +1,35 @@
 <template>
    <div class="timeline">
   <!-- Timeline item -->
-  <div class="timeline-item">
-    <div class="timeline-item-date">21 <small>DEC</small></div>
-    <div class="timeline-item-divider"></div>
-    <div class="timeline-item-content">Plain text item</div>
+  <div class="timeline-item" v-for="item in children" :key="item.Id">
+    <TimeLineItem :item="item" />
   </div>
-  <!-- Timeline item with inner -->
-  <div class="timeline-item">
-    <div class="timeline-item-date">22 <small>DEC</small></div>
-    <div class="timeline-item-divider"></div>
-    <div class="timeline-item-content">
-      <div class="timeline-item-inner">Another text goes here</div>
-    </div>
-  </div>
-  <!-- Timeline item with special timeline elements -->
-  <div class="timeline-item">
-    <div class="timeline-item-date">23 <small>DEC</small></div>
-    <div class="timeline-item-divider"></div>
-    <div class="timeline-item-content">
-      <div class="timeline-item-time">12:33</div>
-      <div class="timeline-item-title">Item Title</div>
-      <div class="timeline-item-subtitle">Item Subtitle</div>
-      <div class="timeline-item-text">Item Text</div>
-    </div>
-  </div>
-  <!-- Timeline item with special timeline elements and inner -->
-  <div class="timeline-item">
-    <div class="timeline-item-date">24 <small>DEC</small></div>
-    <div class="timeline-item-divider"></div>
-    <div class="timeline-item-content">
-      <div class="timeline-item-inner">
-        <div class="timeline-item-time">12:33</div>
-        ...
-      </div>
-    </div>
-  </div>
-  <!-- Timeline item with multiple events per day  -->
-  <div class="timeline-item">
-    <div class="timeline-item-date">25 <small>DEC</small></div>
-    <div class="timeline-item-divider"></div>
-    <div class="timeline-item-content">
-      <div class="timeline-item-time">12:33</div>
-      <div class="timeline-item-title">Item Title</div>
-      <div class="timeline-item-subtitle">Item Subtitle</div>
-      <div class="timeline-item-text">Item Text</div>
-      <div class="timeline-item-time">15:45</div>
-      <div class="timeline-item-title">Item Title</div>
-      <div class="timeline-item-subtitle">Item Subtitle</div>
-      <div class="timeline-item-text">Item Text</div>
-    </div>
-  </div>
-  <!-- Timeline item with multiple events (inners) per day -->
-  <div class="timeline-item">
-    <div class="timeline-item-date">26 <small>DEC</small></div>
-    <div class="timeline-item-divider"></div>
-    <div class="timeline-item-content">
-      <div class="timeline-item-inner">
-        <div class="timeline-item-time">12:33</div>
-        ...
-      </div>
-      <div class="timeline-item-inner">
-        <div class="timeline-item-time">15:45</div>
-        ...
-      </div>
-    </div>
-  </div>
-  <!-- Timeline item with Card -->
-  <div class="timeline-item">
-    <div class="timeline-item-date">27 <small>DEC</small></div>
-    <div class="timeline-item-divider"></div>
-    <div class="timeline-item-content card">
-      <div class="card-header">Card header</div>
-      <div class="card-content card-content-padding">Card content</div>
-      <div class="card-footer">Card footer</div>
-    </div>
-  </div>
+  
 </div>
 </template>
 <script>
+import TimeLineItem from '@/components/TimeLineItem'
 export default {
-  mounted(){
-       
-  }
+    components: {TimeLineItem},
+   data() {
+       return {
+           children: []
+       }
+   },
+   mounted(){
+     this.getChildren()
+   },
+
+   methods : {
+     getChildren () {
+      this.api.getData('activities').then((res) => {
+        this.children = res.data
+        console.log(this.children) 
+      }, (err) => {
+        console.log(err)
+      })
+    }
+   }
 }
 </script>
 

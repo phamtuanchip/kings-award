@@ -1,6 +1,5 @@
 <template>
-   <f7-page>
-       <Rankings />
+   <f7-page>       
        <TimeLine />
    </f7-page>
 </template>

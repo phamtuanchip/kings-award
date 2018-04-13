@@ -702,5 +702,9 @@
   "tasks": [
     {"Id":1, "Name":"Lau nhà", "DefaultPoint": 1, "ManualPoint" : 0},
     {"Id":1, "Name":"Rửa bát", "DefaultPoint": 3, "ManualPoint" : 0}
+  ],
+  "activities": [
+    {"Id": 1, "DateTime": "12:30 13-04-2018", "Title":"Item tile", "SubTitle": "Item sub title", "ItemText":"Item text here", "ItemInerText":"Item in box content"},
+    {"Id": 2, "DateTime": "12:30 13-04-2018", "Title":"Item tile2", "SubTitle": "Item sub title2", "ItemText":"Item text here2", "ItemInerText":"Item in box content2"}
   ]
 }

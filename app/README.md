@@ -24,3 +24,12 @@ npm run build
 * `src/main.js` - main app file where you include/import all required libs and init app
 * `src/routes.js` - app routes
 * `src/app.vue` - main app structure/component
+*
+
+### Lib
+npm install -g json-server
+*  run db json-server db.json 
+*  default db serever localhost:3000
+npm install --save axios
+npm install --save vuex
+npm install --save vuex-persistedstate

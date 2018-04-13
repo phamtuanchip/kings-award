@@ -34,6 +34,10 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 // Init BootstrapVue Plugin
 Vue.use(BootstrapVue);
 
+import store from './service/store'
+import api from './service/backend-api'
+import appUtil from './service/app-util'
+
 // Init App
 new Vue({
   el: '#app',

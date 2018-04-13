@@ -28,10 +28,13 @@
   },
   "homepage": "http://framework7.io/vue/",
   "dependencies": {
+    "axios": "^0.18.0",
     "bootstrap-vue": "^2.0.0-rc.6",
     "framework7": "^1.6.4",
     "framework7-vue": "^0.9.2",
-    "vue": "^2.2.4"
+    "vue": "^2.2.4",
+    "vuex": "^3.0.1",
+    "vuex-persistedstate": "^2.5.2"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

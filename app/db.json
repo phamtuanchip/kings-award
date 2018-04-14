@@ -693,62 +693,58 @@
   ],
   "children": [
     {
-      "Id": 1,
+      "id": 1,
       "Name": "Nhat Minh",
       "Avatar": "https://lorempixel.com/600/300/sports/1/",
       "Year": 2011,
       "DOB": "2018-03-12",
       "Description": "Chào bí",
       "Gender": 1,
-      "archives": [],
-      "id": 1
+      "archives": []
     },
     {
-      "Id": 2,
+      "id": 2,
       "Name": "Minh Ha",
       "Avatar": "https://lorempixel.com/600/300/sports/2/",
       "Year": 2015,
       "DOB": "2018-04-12",
       "Description": "hello",
       "Gender": 1,
-      "archives": [],
-      "id": 2
+      "archives": []
     }
   ],
   "awards": [
     {
-      "Id": 1,
-      "Title":"Phần thưởng tháng",
-      "SubTitle":"Tháng chăm ngoan",
+      "id": 1,
+      "Title": "Phần thưởng tháng",
+      "SubTitle": "Tháng chăm ngoan",
       "From": "2018-04-12",
       "To": "2018-04-26",
       "Gift": "http://lorempixel.com/88/88/abstract/1",
       "TargetPoint": 100
     },
     {
-      "Id": 2,
-      "Title":"Phần thưởng tháng",
-      "SubTitle":"Tháng chăm ngoan",
+      "id": 2,
+      "Title": "Phần thưởng tháng",
+      "SubTitle": "Tháng chăm ngoan",
       "From": "2018-04-26",
       "To": "2018-04-30",
       "Gift": "http://lorempixel.com/88/88/abstract/2",
       "TargetPoint": 10
-    }
-    ,
+    },
     {
-      "Id": 3,
-      "Title":"Phần thưởng tháng",
-      "SubTitle":"Tháng chăm ngoan",
+      "id": 3,
+      "Title": "Phần thưởng tháng",
+      "SubTitle": "Tháng chăm ngoan",
       "From": "2018-04-26",
       "To": "2018-04-30",
       "Gift": "http://lorempixel.com/88/88/abstract/2",
       "TargetPoint": 10
-    }
-    ,
+    },
     {
-      "Id": 4,
-      "Title":"Phần thưởng tháng",
-      "SubTitle":"Tháng chăm ngoan",
+      "id": 4,
+      "Title": "Phần thưởng tháng",
+      "SubTitle": "Tháng chăm ngoan",
       "From": "2018-04-26",
       "To": "2018-04-30",
       "Gift": "http://lorempixel.com/88/88/abstract/2",
@@ -757,53 +753,203 @@
   ],
   "archives": [
     {
+      "id": 1,
       "childrenId": 1,
       "awardsId": 1,
       "ArchivePoints": 10,
       "TaskDone": [
         {
-          "TaskId": 2,
+          "tasksId": 2,
           "Point": 2
-        },
-        {
-          "TaskId": 2,
-          "Point": -1
         }
       ]
     },
     {
-      "childrenId": 1,
-      "awardsId": 3,
-      "ArchivePoints": 10,
+      "childrenId": "1",
+      "awardsId": "2",
+      "ArchivePoints": "",
       "TaskDone": [
         {
-          "TaskId": 1,
-          "Point": 2
+          "tasksId": "1",
+          "Point": "2"
+        }
+      ],
+      "id": 2
+    },
+    {
+      "childrenId": "1",
+      "awardsId": "2",
+      "ArchivePoints": "",
+      "TaskDone": [
+        {
+          "tasksId": "1",
+          "Point": "2"
         },
         {
-          "TaskId": 2,
-          "Point": -1
+          "tasksId": "1",
+          "Point": "2"
         }
-      ]
+      ],
+      "id": 3
+    },
+    {
+      "childrenId": "1",
+      "awardsId": "2",
+      "ArchivePoints": "",
+      "TaskDone": [
+        {
+          "tasksId": "1",
+          "Point": "2"
+        }
+      ],
+      "id": 4
+    },
+    {
+      "childrenId": "1",
+      "awardsId": "2",
+      "ArchivePoints": "",
+      "TaskDone": [
+        {
+          "tasksId": "1",
+          "Point": "2"
+        }
+      ],
+      "id": 5
+    },
+    {
+      "DateTime": "2018-04-14",
+      "childrenId": "1",
+      "awardsId": "1",
+      "ArchivePoints": "1",
+      "TaskDone": [
+        {
+          "tasksId": "2",
+          "Point": "1"
+        }
+      ],
+      "id": 6
+    },
+    {
+      "DateTime": "2018-04-14",
+      "childrenId": "1",
+      "awardsId": "4",
+      "ArchivePoints": "",
+      "TaskDone": [
+        {
+          "tasksId": "4",
+          "Point": ""
+        }
+      ],
+      "id": 7
+    },
+    {
+      "DateTime": "2018-04-14",
+      "childrenId": "1",
+      "awardsId": "4",
+      "ArchivePoints": "1",
+      "TaskDone": [
+        {
+          "tasksId": "4",
+          "Point": "1"
+        }
+      ],
+      "id": 8
+    },
+    {
+      "DateTime": "2018-04-14",
+      "childrenId": "1",
+      "awardsId": "4",
+      "ArchivePoints": "2",
+      "TaskDone": [
+        {
+          "tasksId": "4",
+          "Point": "2"
+        }
+      ],
+      "id": 9
+    },
+    {
+      "DateTime": "2018-04-14",
+      "childrenId": "1",
+      "awardsId": "2",
+      "ArchivePoints": "1",
+      "TaskDone": [
+        {
+          "tasksId": "1",
+          "Point": "1"
+        }
+      ],
+      "id": 10
+    },
+    {
+      "DateTime": "2018-04-14",
+      "childrenId": "1",
+      "awardsId": "2",
+      "ArchivePoints": "2",
+      "TaskDone": [
+        {
+          "tasksId": "2",
+          "Point": "2"
+        }
+      ],
+      "id": 11
+    },
+    {
+      "DateTime": "2018-04-12",
+      "childrenId": "1",
+      "awardsId": "2",
+      "ArchivePoints": "1",
+      "TaskDone": [
+        {
+          "tasksId": "3",
+          "Point": "1"
+        }
+      ],
+      "id": 12
+    },
+    {
+      "DateTime": "2018-04-12",
+      "childrenId": "1",
+      "awardsId": "4",
+      "ArchivePoints": "",
+      "TaskDone": [
+        {
+          "tasksId": "1",
+          "Point": ""
+        }
+      ],
+      "id": 13
     }
   ],
   "tasks": [
     {
-      "Id": 1,
+      "id": 1,
       "Name": "Lau nhà",
       "DefaultPoint": 1,
       "ManualPoint": 0
     },
     {
-      "Id": 1,
+      "id": 2,
       "Name": "Rửa bát",
+      "DefaultPoint": 3,
+      "ManualPoint": 0
+    },
+    {
+      "id": 3,
+      "Name": "Gấp quần áo",
+      "DefaultPoint": 3,
+      "ManualPoint": 0
+    },
+    {
+      "id": 4,
+      "Name": "Trông em",
       "DefaultPoint": 3,
       "ManualPoint": 0
     }
   ],
   "activities": [
     {
-      "Id": 1,
+      "id": 1,
       "DateTime": "2018-04-11 12:30",
       "Title": "Item tile",
       "SubTitle": "Item sub title",
@@ -811,7 +957,7 @@
       "ItemInerText": "Item in box content"
     },
     {
-      "Id": 2,
+      "id": 2,
       "DateTime": "2018-04-12 13:30",
       "Title": "Item tile2",
       "SubTitle": "Item sub title2",
@@ -819,7 +965,7 @@
       "ItemInerText": "Item in box content2"
     },
     {
-      "Id": 3,
+      "id": 3,
       "DateTime": "2018-04-13 14:30",
       "Title": "Item tile2",
       "SubTitle": "Item sub title2",
@@ -827,7 +973,7 @@
       "ItemInerText": "Item in box content2"
     },
     {
-      "Id": 4,
+      "id": 4,
       "DateTime": "2018-04-13 15:30",
       "Title": "Item tile2",
       "SubTitle": "Item sub title2",
@@ -835,7 +981,7 @@
       "ItemInerText": "Item in box content2"
     },
     {
-      "Id": 5,
+      "id": 5,
       "DateTime": "2018-04-13 16:30",
       "Title": "Item tile2",
       "SubTitle": "Item sub title2",
@@ -843,7 +989,7 @@
       "ItemInerText": "Item in box content2"
     },
     {
-      "Id": 6,
+      "id": 6,
       "DateTime": "2018-04-13 17:30",
       "Title": "Item tile2",
       "SubTitle": "Item sub title2",
@@ -851,12 +997,28 @@
       "ItemInerText": "Item in box content2"
     },
     {
-      "Id": 7,
+      "id": 7,
       "DateTime": "2018-04-13 18:30",
       "Title": "Item tile2",
       "SubTitle": "Item sub title2",
       "ItemText": "Item text here2",
       "ItemInerText": "Item in box content2"
+    },
+    {
+      "DateTime": "2018-04-14 05:42",
+      "Title": "Đã hoàn thành Trông em",
+      "SubTitle": "Đã đạt được 1 điểm",
+      "ItemText": "Chúc mừng Minh Ha",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 8
+    },
+    {
+      "DateTime": "2018-04-14 05:45",
+      "Title": "Đã hoàn thành Rửa bát",
+      "SubTitle": "Đã đạt được  điểm",
+      "ItemText": "Chúc mừng Minh Ha",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 9
     }
   ]
 }

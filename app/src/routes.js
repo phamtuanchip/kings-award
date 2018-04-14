@@ -4,7 +4,7 @@ export default [
         component: require('./components/Home.vue')
     },
     {
-        path: '/play/',
+        path: '/play/:Id',
         component: require('./components/Play.vue')
     },
     {

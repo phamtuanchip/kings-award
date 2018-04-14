@@ -1,7 +1,7 @@
 <template>
    <div class="timeline">
   <!-- Timeline item -->
-  <div class="timeline-item" v-for="item in children" :key="item.Id">
+  <div class="timeline-item" v-for="item in children" :key="item.id">
     <TimeLineItem :item="item" />
   </div>
   
@@ -22,7 +22,7 @@ export default {
 
    methods : {
      getChildren () {
-      this.api.getData('activities').then((res) => {
+      this.api.getData('activities?_sort=DateTime&_order=desc').then((res) => {
         this.children = res.data
         console.log(this.children) 
       }, (err) => {

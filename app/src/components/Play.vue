@@ -63,15 +63,14 @@ export default {
       tasksName: "",
       Point: "",
       childrenName: ""
-      
     };
   },
   watch: {
     tasksId: function(newVal){
-      this.tasksName = this.tasks[newVal].Name
+      this.tasksName = this.tasks[parseInt(newVal)-1].Name
     },
     'archives.childrenId': function(newVal){
-      this.childrenName = this.children[newVal].Name
+      this.childrenName = this.children[parseInt(newVal)-1].Name
     }
   },
   mounted() {
@@ -81,12 +80,30 @@ export default {
     this.getTasks();
   },
   methods: {
+    searchArchives(childId, awardId){
+      let archive = {}
+       this.api.getData("archives?childrenId="+childId+'&awardsId='+awardId).then(
+        res => {
+          archive = res.data;
+          console.log(archive)
+          return archive;
+          // this.customer.avatar = '/assets/' + this.customer.avatar
+        },
+        err => {
+          console.log(err);
+          return archive;
+        }
+      );
+    },
+    updateImage(){
+      
+    },
     updateActivities(archives) {
       let activities = {
         DateTime: Vue.moment().format("YYYY-MM-DD hh:mm"),
-        Title: 'Đã hoàn thành '+ this.tasksName,
+        Title: 'Chúc mừng ' + this.childrenName,
         SubTitle: 'Đã đạt được '+ archives.ArchivePoints + ' điểm',
-        ItemText: 'Chúc mừng ' + this.childrenName,
+        ItemText: 'Đã hoàn thành '+ this.tasksName,
         ItemInerText: 'Con đang được xếp hạng: '
       }
        this.api.postData("activities", activities).then(
@@ -97,8 +114,10 @@ export default {
         );
     },
     save() {
+      
       let archives = this.archives;
-
+      let archive = this.searchArchives(archives.childrenId, archives.awardsId);
+      console.log(archive)
       console.log(archives);
       if (!archives.id) {
         archives.TaskDone = [];

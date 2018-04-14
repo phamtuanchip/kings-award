@@ -5,7 +5,7 @@
     <div class="timeline-item-content">       
     <div class="timeline-item-time">{{time}}</div>
       <div class="timeline-item-title">   {{item.Title}}</div>
-      <div class="timeline-item-subtitle"> {{item.SubtitleTitle}}</div>
+      <div class="timeline-item-subtitle"> {{item.SubTitle}}</div>
       <div class="timeline-item-text"> {{item.ItemText}}</div>
      <div class="timeline-item-inner">{{item.ItemInerText}}</div>
      <div class="timeline-item-time">{{ago}}</div>    

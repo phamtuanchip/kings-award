@@ -12,6 +12,8 @@
   "dependencies": {
     "autoprefixer": "^8.3.0",
     "axios": "^0.18.0",
+    "node-sass": "^4.8.3",
+    "sass-loader": "^7.0.1",
     "vue-i18n": "^7.3.3",
     "vue-moment": "^3.2.0",
     "vuex-persistedstate": "^2.5.2"

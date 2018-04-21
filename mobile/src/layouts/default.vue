@@ -32,9 +32,9 @@
         inset-delimiter
       >
         <q-list-header>Essential Links</q-list-header>
-        <q-item @click.native="openURL('user/my-profile')">
-          <q-item-side icon="school" />
-          <q-item-main label="Docs" sublabel="quasar-framework.org" />
+        <q-item to="user/profile">
+          <q-item-side icon="account circle" />
+          <q-item-main label="Tuan Pham" sublabel="Profile" />
         </q-item>
         <q-item @click.native="openURL('https://github.com/quasarframework/')">
           <q-item-side icon="code" />
@@ -48,9 +48,9 @@
           <q-item-side icon="record_voice_over" />
           <q-item-main label="Forum" sublabel="forum.quasar-framework.org" />
         </q-item>
-        <q-item @click.native="openURL('https://twitter.com/quasarframework')">
+        <q-item to="home">
           <q-item-side icon="rss feed" />
-          <q-item-main label="Twitter" sublabel="@quasarframework" />
+          <q-item-main label="News" sublabel="@home" />
         </q-item>
       </q-list>
     </q-layout-drawer>

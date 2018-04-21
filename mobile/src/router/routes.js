@@ -6,7 +6,10 @@ export default [
     redirect: 'home',
     children: [
       { path: '', component: () => import('pages/index') },
-      { path: 'home', component: () => import('components/Home')}
+      { path: 'home', component: () => import('components/Home')},
+      { path: 'user', component: () => import('components/User'), children: [
+        { path: 'profile', component: () => import('components/Profile')},
+      ]}
        
     ]
   },

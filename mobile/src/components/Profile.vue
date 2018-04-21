@@ -1,8 +1,8 @@
 <template>
- <f7-page> 
-     <f7-navbar title="Profile" back-link="Back" sliding></f7-navbar>
+ <q-page> 
+     
  <children />
- </f7-page>
+ </q-page>
 </template>
 <script>
 import Children from 'components/Children'

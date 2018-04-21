@@ -1,10 +1,12 @@
 <template>
+
    <div class="timeline">
   <!-- Timeline item -->
+  <q-pull-to-refresh :handler="refresher">
   <div class="timeline-item" v-for="item in children" :key="item.id">
     <TimeLineItem :item="item" />
   </div>
-  
+  </q-pull-to-refresh>
 </div>
 </template>
 <script>
@@ -21,6 +23,16 @@ export default {
    },
 
    methods : {
+       refresher (done) {
+          this.api.getData('activities?_sort=DateTime&_order=desc').then((res) => {
+         this.children = res.data
+         done()
+         this.$q.notify('Item #' + this.children.length + ' is new.')
+      }, (err) => {
+        console.log(err)
+      }) 
+       
+    },
      getChildren () {
       console.log(this.api) 
       this.api.getData('activities?_sort=DateTime&_order=desc').then((res) => {

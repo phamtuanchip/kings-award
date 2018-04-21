@@ -35,7 +35,7 @@
         <f7-label>Gender</f7-label>
         <f7-input type="select">
           <option value="1">Male</option>
-          <option value="1">Female</option>
+          <option value="2">Female</option>
         </f7-input>
       </f7-list-item>
       <f7-list-item>

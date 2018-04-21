@@ -8,6 +8,10 @@ export default [
         component: require('./components/Play.vue')
     },
     {
+        path: '/plays/',
+        component: require('./components/Plays.vue')
+    },
+    {
         path: '/rankings/',
         component: require('./components/Rankings.vue')
     },

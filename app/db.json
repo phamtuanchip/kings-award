@@ -711,6 +711,16 @@
       "Description": "hello",
       "Gender": 1,
       "archives": []
+    },
+    {
+      "id": 3,
+      "Name": "Kiểm thử",
+      "Avatar": "https://lorempixel.com/600/300/sports/1/",
+      "Year": 2011,
+      "DOB": "2018-03-12",
+      "Description": "Chào bí",
+      "Gender": 1,
+      "archives": []
     }
   ],
   "awards": [
@@ -755,12 +765,12 @@
     {
       "DateTime": "04/14/2018",
       "childrenId": "1",
-      "awardsId": "4",
-      "ArchivePoints": "2",
+      "awardsId": "2",
+      "ArchivePoints": "1",
       "TaskDone": [
         {
-          "tasksId": "2",
-          "Point": "2"
+          "tasksId": "1",
+          "Point": "1"
         }
       ],
       "id": 1
@@ -768,28 +778,15 @@
     {
       "DateTime": "04/14/2018",
       "childrenId": "1",
-      "awardsId": "4",
-      "ArchivePoints": "2",
+      "awardsId": "2",
+      "ArchivePoints": "3",
       "TaskDone": [
         {
-          "tasksId": "2",
-          "Point": "2"
+          "tasksId": "3",
+          "Point": "3"
         }
       ],
       "id": 2
-    },
-    {
-      "DateTime": "04/14/2018",
-      "childrenId": "1",
-      "awardsId": "4",
-      "ArchivePoints": "2",
-      "TaskDone": [
-        {
-          "tasksId": "1",
-          "Point": "2"
-        }
-      ],
-      "id": 3
     }
   ],
   "tasks": [
@@ -978,6 +975,94 @@
       "ItemText": "Đã hoàn thành Lau nhà",
       "ItemInerText": "Con đang được xếp hạng: ",
       "id": 20
+    },
+    {
+      "DateTime": "2018-04-14 10:28",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 12 điểm",
+      "ItemText": "Đã hoàn thành Rửa bát",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 21
+    },
+    {
+      "DateTime": "2018-04-14 10:56",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành Lau nhà",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 22
+    },
+    {
+      "DateTime": "2018-04-14 10:56",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành Lau nhà",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 23
+    },
+    {
+      "DateTime": "2018-04-14 10:57",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được  điểm",
+      "ItemText": "Đã hoàn thành Gấp quần áo",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 24
+    },
+    {
+      "DateTime": "2018-04-14 10:57",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được  điểm",
+      "ItemText": "Đã hoàn thành Gấp quần áo",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 25
+    },
+    {
+      "DateTime": "2018-04-14 10:57",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 444 điểm",
+      "ItemText": "Đã hoàn thành Lau nhà",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 26
+    },
+    {
+      "DateTime": "2018-04-14 10:58",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành Rửa bát",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 27
+    },
+    {
+      "DateTime": "2018-04-14 10:58",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành Rửa bát",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 28
+    },
+    {
+      "DateTime": "2018-04-14 11:01",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 1 điểm",
+      "ItemText": "Đã hoàn thành Lau nhà",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 29
+    },
+    {
+      "DateTime": "2018-04-14 11:11",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 1 điểm",
+      "ItemText": "Đã hoàn thành Lau nhà",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 30
+    },
+    {
+      "DateTime": "2018-04-14 11:12",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 3 điểm",
+      "ItemText": "Đã hoàn thành Gấp quần áo",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 31
     }
   ]
 }

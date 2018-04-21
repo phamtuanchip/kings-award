@@ -3,8 +3,11 @@ export default [
   {
     path: '/',
     component: () => import('layouts/default'),
+    redirect: 'home',
     children: [
-      { path: '', component: () => import('pages/index') }
+      { path: '', component: () => import('pages/index') },
+      { path: 'home', component: () => import('components/Home')}
+       
     ]
   },
 

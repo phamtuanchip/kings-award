@@ -77,17 +77,17 @@
         
       >
 
-         <q-option-group
-    color="secondary"
-    type="radio"
-    inline
-    v-model="group"
-    :options="[
-    {label: 'Rất tốt', value: 2},
-    {label: 'Hoàn thành', value: 1},
-    {label: 'Không tốt', value: -1},
-    ]"
-  />
+      <q-option-group
+        color="secondary"
+        type="radio"
+        inline
+        v-model="Point"
+        :options="[
+        {label: 'Rất tốt', value: 2},
+        {label: 'Hoàn thành', value: 1},
+        {label: 'Không tốt', value: -1},
+        ]"
+      />
       </q-field>
       
 
@@ -99,6 +99,8 @@
       >
         <q-input type="number"  v-model="newPoint" float-label="Cho điểm" />
       </q-field>
+      <q-btn icon="create" label="New item"  color="primary"
+    @click="save" />
   </q-page>
 </template>
 <script>
@@ -107,14 +109,14 @@ export default {
   data() {
     return {
       item: {},
-      group:[],
+      group: [],
       rangeValues: {},
-      stars:0,
-      date: '',
-      select: '',
-      text: '',
-      model:[],
-      mailHasError:'',
+      stars: 0,
+      date: "",
+      select: "",
+      text: "",
+      model: [],
+      mailHasError: "",
       award: {},
       children: [],
       tasks: [],
@@ -127,8 +129,8 @@ export default {
       },
       tasksId: "",
       tasksName: "",
-      newTask:"",
-      newPoint:0,
+      newTask: "",
+      newPoint: 0,
       Point: "",
       childrenName: ""
     };
@@ -151,20 +153,20 @@ export default {
   },
   methods: {
     searchArchives(childId, awardId) {
-      let promise = new Promise((resolve, reject)=> {
+      let promise = new Promise((resolve, reject) => {
         let archive = {};
         this.api
-          .getData("archives?childrenId=" + childId + "&awardsId=" + awardId)
+          .getData("archives/?childrenId=" + childId + "&awardsId=" + awardId)
           .then(
             res => {
-              archive = res.data
+              archive = res.data;
               console.log(archive);
-               resolve(archive);
+              resolve(archive);
               // this.customer.avatar = '/assets/' + this.customer.avatar
             },
             err => {
               console.log(err);
-               reject(archive);
+              reject(archive);
             }
           );
       });
@@ -204,57 +206,73 @@ export default {
       );
     },
     save() {
-      let archives ={}
-      this.searchArchives(archives.childrenId, archives.awardsId).then(
+      //console.log(this.group)
+      //return ;
+      let archives = {};
+      this.searchArchives(
+        this.archives.childrenId,
+        this.archives.awardsId
+      ).then(
         archive => {
           console.log(archive);
-          if(archive.constructor == Array) {
-            archives = archive[0]
-          }else {
-            archives = archive;
-          }
-
-          if (!archive) {
+          if (archive.constructor == Array && archive.length > 0) {
+            archives = archive[0];
+          } else if (archive.constructor == Array && archive.length == 0) {
             archives = this.archives;
             archives.TaskDone = [];
             archives.ArchivePoints = this.Point;
-            archives.TaskDone.push({ tasksId: this.tasksId, Point: this.Point });
+            archives.TaskDone.push({
+              tasksId: this.tasksId,
+              Point: this.Point
+            });
             this.api.postData("archives", archives).then(
               res => {
                 this.updateActivities(archives);
+                this.$q.notify({
+                        color: 'secondary',
+                        icon: 'star',
+                        message: 'Đã thêm mới thành công!'
+                      })
               },
               err => {
                 console.log(err);
               }
             );
           } else {
-            archives.TaskDone.push({ tasksId: this.tasksId, Point: this.Point });
-            let pCount = 0;
-            archives.ArchivePoints += this.Point;
-            this.api.putData("archives/" + archives.id.toString(), archives).then(
-              res => {
-                this.updateActivities(archives);
-              },
-              err => {
-                console.log(err);
-              }
-            );
+            archives = archive;
           }
+          console.log(archives)
+
+         
+          archives.TaskDone.push({ tasksId: this.tasksId, Point: this.Point });
+          let pCount = 0;
+          archives.ArchivePoints += this.Point;
+          this.api.putData("archives/" + archives.id, archives).then(
+            res => {
+              this.updateActivities(archives);
+              this.$q.notify({
+                        color: 'secondary',
+                        icon: 'star',
+                        message: 'Đã cập nhật thành công!'
+                      })
+            },
+            err => {
+              console.log(err);
+            }
+          );
         },
         err => {
           console.log(err);
         }
       );
-
-      
     },
     setPoint() {},
     getChildren() {
       this.api.getData("children").then(
         res => {
-          this.children = res.data.map(child =>{
-            return {'label': child.Name, 'value': child.id}
-          })
+          this.children = res.data.map(child => {
+            return { label: child.Name, value: child.id };
+          });
           console.log(this.children);
           // this.customer.avatar = '/assets/' + this.customer.avatar
         },
@@ -266,8 +284,8 @@ export default {
     getTasks() {
       this.api.getData("tasks").then(
         res => {
-          this.tasks = res.data.map(task =>{
-            return {'label': task.Name, 'value': task.id}
+          this.tasks = res.data.map(task => {
+            return { label: task.Name, value: task.id };
           });
           console.log(this.tasks);
           // this.customer.avatar = '/assets/' + this.customer.avatar
@@ -278,11 +296,12 @@ export default {
       );
     },
     getItemById() {
-      //this.archives.awardsId = this.$route.params.Id;
+      console.log(this.$route.params.id);
+      this.archives.awardsId = this.$route.params.id;
       this.api.getData("awards/" + this.$route.params.id).then(
         res => {
           this.award = res.data;
-          console.log(this.award)
+          console.log(this.award);
           // this.customer.avatar = '/assets/' + this.customer.avatar
         },
         err => {

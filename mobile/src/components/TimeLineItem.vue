@@ -1,22 +1,36 @@
 <template>
-  <div class="timeline-item">
-    <div class="timeline-item-date">{{day}}<small>{{month}}</small></div>
-    <div class="timeline-item-divider"></div>
-    <div class="timeline-item-content">       
-    <div class="timeline-item-time">{{time}}</div>
-      <div class="timeline-item-title">   {{item.Title}}</div>
-      <div class="timeline-item-subtitle"> {{item.SubTitle}}</div>
-      <div class="timeline-item-text"> {{item.ItemText}}</div>
-     <div class="timeline-item-inner">{{item.ItemInerText}}</div>
-     <div class="timeline-item-time">{{ago}}</div>    
-   </div>
-  </div>
+  <q-timeline-entry
+        :title="title"
+        :subtitle="full"
+        :side="side"
+         
+      >
+       
+        <div>          
+          {{item.SubTitle}}
+          {{item.ItemText}}
+          {{item.ItemInerText}}          
+        </div>
+      </q-timeline-entry>
+   
 </template>
 <script>
 import Vue from 'vue'
 export default {
-  props: ["item"],  
+  props: ["item", "idx"],  
   computed: {
+      side:  function()
+      {
+          return (parseInt(this.idx) / 2) == 1 ? "left" : "right"
+      },
+       title:  function()
+      {
+          return this.item.Title
+      },
+      full: function()
+      {
+          return  Vue.moment(this.item.DateTime).format('MMMM DD, YYYYY');;
+      },
       day: function(){
           return  Vue.moment(this.item.DateTime).format('DD');;
       },

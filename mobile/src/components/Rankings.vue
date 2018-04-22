@@ -1,6 +1,6 @@
 <template>
-<f7-page>
-    <f7-navbar title="Ranking" back-link="Back" sliding></f7-navbar>
+<q-page>
+     
  <div id="wrapper">
     <div id="container">
 
@@ -211,7 +211,7 @@
 
     </div>
 </div>
-</f7-page>
+</q-page>
 </template>
 <script>
 export default {

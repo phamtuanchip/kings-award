@@ -17,8 +17,8 @@
         </q-btn>
 
         <q-toolbar-title>
-          Quasar App
-          <div slot="subtitle">Running on Quasar v{{ $q.version }}</div>
+          Kings Award
+          <div slot="subtitle">Kluge Kinder</div>
         </q-toolbar-title>
       </q-toolbar>
     </q-layout-header>
@@ -31,24 +31,33 @@
         link
         inset-delimiter
       >
-        <q-list-header>Essential Links</q-list-header>
-        <q-item to="user/profile">
+        <q-list-header>
+          <q-collapsible avatar="statics/boy-avatar.png" label="With avatar">
+          <div>Some thing about you</div>
+        </q-collapsible>
+        
+        </q-list-header>
+        <q-item to="/profile">
           <q-item-side icon="account circle" />
-          <q-item-main label="Tuan Pham" sublabel="Profile" />
+          <q-item-main label="Account" sublabel="Account" />
         </q-item>
-        <q-item @click.native="openURL('https://github.com/quasarframework/')">
+        <q-item to="/children">
           <q-item-side icon="code" />
-          <q-item-main label="GitHub" sublabel="github.com/quasarframework" />
+          <q-item-main label="My kids" sublabel="" />
         </q-item>
-        <q-item @click.native="openURL('https://discord.gg/5TDhbDg')">
+        <q-item  to="/plays">
           <q-item-side icon="chat" />
-          <q-item-main label="Discord Chat Channel" sublabel="https://discord.gg/5TDhbDg" />
+          <q-item-main label="Play" sublabel="Discover winner" />
         </q-item>
-        <q-item @click.native="openURL('http://forum.quasar-framework.org')">
+        <q-item to="/rankings">
           <q-item-side icon="record_voice_over" />
-          <q-item-main label="Forum" sublabel="forum.quasar-framework.org" />
+          <q-item-main label="Kings" sublabel="Who is the Qeen?" />
         </q-item>
-        <q-item to="home">
+        <q-item to="/awards">
+          <q-item-side icon="rss feed" />
+          <q-item-main label="Awards" sublabel="@Awards" />
+        </q-item>
+        <q-item to="/home">
           <q-item-side icon="rss feed" />
           <q-item-main label="News" sublabel="@home" />
         </q-item>

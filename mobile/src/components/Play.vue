@@ -1,55 +1,120 @@
 <template>
-  <f7-page>
-    <f7-navbar title="About" back-link="Back" sliding></f7-navbar>
-      <div>
-  <b-card :title="award.Title"
-          :img-src="award.Gift"
-          img-alt="Image"
-          img-top
-          tag="article"
-          style="max-width: 20rem;"
-          class="mb-2">
-    <p class="card-text">
-     {{award.SubTitle}}
-    </p>
-    <f7-button big fill color="green">Mở quả</f7-button>
-  </b-card>
-</div>
-    <f7-list form>
-      <f7-list-item>
-        <f7-label>Ngày</f7-label>
-        <f7-input type="date" placeholder="Birth date" v-model="archives.DateTime"></f7-input>
-      </f7-list-item>
-      <f7-list-item>
-        <f7-label>Con của bạn</f7-label>
-        <f7-input type="select" v-model="archives.childrenId" >
-          <option value="0" selected>----chọn-----</option>
-          <option :value="item.id" v-for="item in children" :key="item.id">{{item.Name}}</option> 
-        </f7-input>
-      </f7-list-item>
-      <f7-list-item>
-        <f7-label>Việc tốt</f7-label>
-        <f7-input type="select"   v-model="tasksId" >
-          <option value="0" selected>----chọn-----</option>
-          <option :value="item.id" v-for="item in tasks" :key="item.id">{{item.Name}}</option>
-        </f7-input>
-      </f7-list-item>
-      <f7-list-item>
-        <f7-label>Điểm</f7-label>
-        <f7-input type="number" v-model="Point" ></f7-input>
-      </f7-list-item>
-         <f7-grid>
-          <f7-col><f7-button big fill color="green" @click="save">Lưu</f7-button></f7-col>
-          <f7-col><f7-button big fill  >Bỏ qua</f7-button></f7-col>
-        </f7-grid>
-    </f7-list>
-  </f7-page>
+  <q-page>
+     <q-card inline style="width: 500px">
+  <q-card-media>
+    <img src="~assets/donuts.png">
+  </q-card-media>
+  <q-card-title>
+    {{award.Title}}
+    <q-rating slot="subtitle" v-model="stars" :max="5" />
+    <div slot="right" class="row items-center">
+      <q-icon name="place" />  {{award.SubTitle}}
+    </div>
+  </q-card-title>
+  <q-card-main>
+    <p>{{award.TargetPoint}}</p>
+    <p class="text-faded">Small plates, salads & sandwiches in an intimate setting.</p>
+  </q-card-main>
+  <q-card-separator />
+  <q-card-actions>
+    <q-btn flat round dense icon="event" />
+    <q-btn flat label="award.From" />
+    <q-btn flat label="award.To" />
+    <q-btn flat label="20%" />
+    <q-btn flat color="primary" label="Quay lại" />
+  </q-card-actions>
+</q-card>
+<q-field
+        icon="access_time"
+        label="Ngày"
+         
+      >
+        <q-datetime
+          type="date"
+          v-model="archives.DateTime"
+          color="secondary"
+          float-label="Ngày"
+        />
+      </q-field>
+      <q-field
+        icon="face"
+        label="Chọn con của bạn"
+       
+      >
+        <q-select
+           
+            float-label="Tên con là:"
+            v-model="archives.childrenId"
+            :options="children"
+          />
+          
+         
+      </q-field>
+      <q-field
+        icon="local florist"
+        label="Việc bé đã làm"
+       
+      >
+        <q-select
+          float-label="Con đã thực hiện:"
+          filter
+          v-model="tasksId"
+          :options="tasks"
+        />
+      </q-field>
+     <q-field
+        icon="add circle outline"
+        label="Thêm mới"
+        
+        
+      >
+        <q-input  v-model="newTask" float-label="Nhập công việc mới" />
+      </q-field>
+     
+      <q-field 
+       icon="thumb up"
+        label="Kết quả"
+        
+      >
+
+         <q-option-group
+    color="secondary"
+    type="radio"
+    inline
+    v-model="group"
+    :options="[
+    {label: 'Rất tốt', value: 2},
+    {label: 'Hoàn thành', value: 1},
+    {label: 'Không tốt', value: -1},
+    ]"
+  />
+      </q-field>
+      
+
+       <q-field
+        icon="exposure"
+        label="Điểm số tự cho"
+       
+        
+      >
+        <q-input type="number"  v-model="newPoint" float-label="Cho điểm" />
+      </q-field>
+  </q-page>
 </template>
 <script>
 import Vue from "vue";
 export default {
   data() {
     return {
+      item: {},
+      group:[],
+      rangeValues: {},
+      stars:0,
+      date: '',
+      select: '',
+      text: '',
+      model:'',
+      mailHasError:'',
       award: {},
       children: [],
       tasks: [],
@@ -62,6 +127,8 @@ export default {
       },
       tasksId: "",
       tasksName: "",
+      newTask,
+      newPoint,
       Point: "",
       childrenName: ""
     };
@@ -90,7 +157,7 @@ export default {
           .getData("archives?childrenId=" + childId + "&awardsId=" + awardId)
           .then(
             res => {
-              archive = res.data;
+              archive = res.data
               console.log(archive);
                resolve(archive);
               // this.customer.avatar = '/assets/' + this.customer.avatar
@@ -185,7 +252,9 @@ export default {
     getChildren() {
       this.api.getData("children").then(
         res => {
-          this.children = res.data;
+          this.children = res.data.map(child =>{
+            return {'label': child.Name, 'value': child.id}
+          })
           console.log(this.children);
           // this.customer.avatar = '/assets/' + this.customer.avatar
         },
@@ -197,7 +266,9 @@ export default {
     getTasks() {
       this.api.getData("tasks").then(
         res => {
-          this.tasks = res.data;
+          this.tasks = res.data.map(task =>{
+            return {'label': task.Name, 'value': task.id}
+          });
           console.log(this.tasks);
           // this.customer.avatar = '/assets/' + this.customer.avatar
         },
@@ -207,10 +278,11 @@ export default {
       );
     },
     getItemById() {
-      this.archives.awardsId = this.$route.params.Id;
-      this.api.getData("awards/" + this.archives.awardsId).then(
+      //this.archives.awardsId = this.$route.params.Id;
+      this.api.getData("awards/" + this.$route.params.Id).then(
         res => {
           this.award = res.data;
+          console.log(this.award)
           // this.customer.avatar = '/assets/' + this.customer.avatar
         },
         err => {

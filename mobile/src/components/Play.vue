@@ -1,27 +1,27 @@
 <template>
   <q-page>
-     <q-card inline style="width: 500px">
+     <q-card inline style="width: 500px" >
   <q-card-media>
-    <img src="~assets/donuts.png">
+    <img :src="award.Gift">
   </q-card-media>
   <q-card-title>
     {{award.Title}}
     <q-rating slot="subtitle" v-model="stars" :max="5" />
     <div slot="right" class="row items-center">
-      <q-icon name="place" />  {{award.SubTitle}}
+      <q-icon name="local play" />  {{award.TargetPoint}}
     </div>
   </q-card-title>
   <q-card-main>
     <p>{{award.TargetPoint}}</p>
-    <p class="text-faded">Small plates, salads & sandwiches in an intimate setting.</p>
+    <p class="text-faded">{{award.SubTitle}}</p>
   </q-card-main>
   <q-card-separator />
   <q-card-actions>
     <q-btn flat round dense icon="event" />
-    <q-btn flat label="award.From" />
-    <q-btn flat label="award.To" />
+    <q-btn flat :label="award.From" />
+    <q-btn flat :label="award.To" />
     <q-btn flat label="20%" />
-    <q-btn flat color="primary" label="Quay lại" />
+    <q-btn flat color="primary" label="Quay lại" @click.native="$router.go(-1)" />
   </q-card-actions>
 </q-card>
 <q-field
@@ -113,7 +113,7 @@ export default {
       date: '',
       select: '',
       text: '',
-      model:'',
+      model:[],
       mailHasError:'',
       award: {},
       children: [],
@@ -127,8 +127,8 @@ export default {
       },
       tasksId: "",
       tasksName: "",
-      newTask,
-      newPoint,
+      newTask:"",
+      newPoint:0,
       Point: "",
       childrenName: ""
     };
@@ -279,7 +279,7 @@ export default {
     },
     getItemById() {
       //this.archives.awardsId = this.$route.params.Id;
-      this.api.getData("awards/" + this.$route.params.Id).then(
+      this.api.getData("awards/" + this.$route.params.id).then(
         res => {
           this.award = res.data;
           console.log(this.award)

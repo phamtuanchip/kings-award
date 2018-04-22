@@ -4,54 +4,32 @@
       color="white"
       arrows
       height="400px" 
-      infinite      
+      infinite
+      v-model="slide"
     >
-      <q-carousel-slide img-src="statics/gift/g1.jpg">
+      <q-carousel-slide v-for="item in items" :key="item.id" :img-src="item.Gift">
         <div class="absolute-bottom custom-caption">
-          <div class="q-display-1">First stop</div>
-          <div class="q-headline">Mountains</div>
+          <div class="q-display-1">{{item.Title}}</div>
+          <div class="q-headline">{{item.SubTitle}}</div>
         </div>
       </q-carousel-slide>
-      <q-carousel-slide img-src="statics/gift/g2.jpg">
-        <div class="absolute-bottom custom-caption">
-          <div class="q-display-1">Second stop</div>
-          <div class="q-headline">Famous City</div>
-        </div>
-      </q-carousel-slide>
-      <q-carousel-slide img-src="statics/gift/g3.jpg">
-        <div class="absolute-bottom custom-caption">
-          <div class="q-display-1">Third stop</div>
-          <div class="q-headline">Famous Bridge</div>
-        </div>
-      </q-carousel-slide>
-       <q-carousel-slide img-src="statics/gift/g4.jpg">
-        <div class="absolute-bottom custom-caption">
-          <div class="q-display-1">Third stop</div>
-          <div class="q-headline">Famous Bridge</div>
-        </div>
-      </q-carousel-slide>
-       <q-carousel-slide img-src="statics/gift/g5.jpg">
-        <div class="absolute-bottom custom-caption">
-          <div class="q-display-1">Third stop</div>
-          <div class="q-headline">Famous Bridge</div>
-        </div>
-      </q-carousel-slide>
-       <q-carousel-slide img-src="statics/gift/g6.jpg">
-        <div class="absolute-bottom custom-caption">
-          <div class="q-display-1">Third stop</div>
-          <div class="q-headline">Famous Bridge</div>
-        </div>
-      </q-carousel-slide>
+       
        <q-carousel-control
         slot="control-button"
         slot-scope="carousel"
         position="bottom-right"
         :offset="[18, 22]"
       >
+         <q-btn
+          round dense push
+          color="amber" 
+          icon="mode edit"
+          @click="edit"
+        />
         <q-btn
           round dense push
           color="amber"
-          :icon="carousel.inFullscreen ? 'fullscreen_exit' : 'fullscreen'"
+          icon="play circle outline"
           @click="play"
         />
       </q-carousel-control>
@@ -78,18 +56,22 @@
  </template>   
  <script>
  export default {
-  props: ["award"],
+   
   data() {
     return {
-      item: {}
+      items: {},
+      slide: 0
     };
   },
   mounted() {
-    this.item = this.award;
+     this.getAwards()
   },
   methods: {
+   
+    edit() {},
     play(){
-      this.$router.push('/play/1')
+       console.log(this.slide)
+      this.$router.push('/play/'+(this.slide+1))
     },
     getChildren() {
       this.api.getData("children").then(
@@ -104,7 +86,15 @@
           console.log(err);
         }
       );
-    }
+    },
+    getAwards(){
+      this.api.getData('awards').then((res) => {
+        this.items = res.data
+        console.log(this.children) 
+      }, (err) => {
+        console.log(err)
+      })
+    },
   }
  }
  </script>

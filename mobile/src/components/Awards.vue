@@ -10,8 +10,11 @@
     >
       <q-tr slot="body" slot-scope="props" :props="props">
         <q-td key="Image" :props="props" >
-          <span ><img :src="props.row.Gift" width="44"/></span>
-          <q-btn size="sm" round dense color="secondary" icon="mode edit"  @click.native="rowClick(props.row)" class="q-mr-xs" />
+          <span >
+          <img  icon="play circle outline" :src="props.row.Gift" width="44"/>
+          <q-btn size="sm" round dense color="secondary" icon="play circle outline"  @click.native="rowClick(props.row)" class="q-mr-xs" />
+          </span>
+          
           <q-tooltip>{{ props.row.Title }}</q-tooltip>
         </q-td>
          <q-td key="Name" :props="props">
@@ -61,6 +64,7 @@ export default {
     }
   },
   methods: {
+    add(){},
     getAwards(){
       this.api.getData('awards').then((res) => {
         this.items = res.data

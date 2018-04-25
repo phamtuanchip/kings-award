@@ -148,23 +148,6 @@
         }
       ],
       "id": 4
-    },
-    {
-      "DateTime": "04/25/2018",
-      "childrenId": 1,
-      "awardsId": "6",
-      "ArchivePoints": -2,
-      "TaskDone": [
-        {
-          "tasksId": 2,
-          "Point": -1
-        },
-        {
-          "tasksId": 2,
-          "Point": -1
-        }
-      ],
-      "id": 5
     }
   ],
   "tasks": [
@@ -465,14 +448,6 @@
       "ItemText": "Đã hoàn thành undefined",
       "ItemInerText": "Con đang được xếp hạng: ",
       "id": 34
-    },
-    {
-      "DateTime": "2018-04-25 10:46",
-      "Title": "Chúc mừng undefined",
-      "SubTitle": "Đã đạt được -2 điểm",
-      "ItemText": "Đã hoàn thành undefined",
-      "ItemInerText": "Con đang được xếp hạng: ",
-      "id": 35
     }
   ]
 }

@@ -119,7 +119,7 @@
       "DateTime": "04/23/2018",
       "childrenId": 1,
       "awardsId": "1",
-      "ArchivePoints": 6,
+      "ArchivePoints": 12,
       "TaskDone": [
         {
           "tasksId": 3,
@@ -132,6 +132,22 @@
         {
           "tasksId": 2,
           "Point": 2
+        },
+        {
+          "tasksId": 4,
+          "Point": 1
+        },
+        {
+          "tasksId": 2,
+          "Point": 1
+        },
+        {
+          "tasksId": 4,
+          "Point": 2
+        },
+        {
+          "tasksId": 4,
+          "Point": 2
         }
       ],
       "id": 3
@@ -140,8 +156,16 @@
       "DateTime": "04/23/2018",
       "childrenId": 2,
       "awardsId": "1",
-      "ArchivePoints": 2,
+      "ArchivePoints": 5,
       "TaskDone": [
+        {
+          "tasksId": 4,
+          "Point": 2
+        },
+        {
+          "tasksId": 4,
+          "Point": 1
+        },
         {
           "tasksId": 4,
           "Point": 2
@@ -473,6 +497,54 @@
       "ItemText": "Đã hoàn thành undefined",
       "ItemInerText": "Con đang được xếp hạng: ",
       "id": 35
+    },
+    {
+      "DateTime": "2018-04-26 11:08",
+      "Title": "Chúc mừng undefined",
+      "SubTitle": "Đã đạt được 7 điểm",
+      "ItemText": "Đã hoàn thành undefined",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 36
+    },
+    {
+      "DateTime": "2018-04-26 11:09",
+      "Title": "Chúc mừng undefined",
+      "SubTitle": "Đã đạt được 3 điểm",
+      "ItemText": "Đã hoàn thành undefined",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 37
+    },
+    {
+      "DateTime": "2018-04-26 11:16",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 8 điểm",
+      "ItemText": "Đã hoàn thành Rửa bát",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 38
+    },
+    {
+      "DateTime": "2018-04-26 11:18",
+      "Title": "Chúc mừng Minh Ha",
+      "SubTitle": "Đã đạt được 5 điểm",
+      "ItemText": "Đã hoàn thành Trông em",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 39
+    },
+    {
+      "DateTime": "2018-04-26 11:18",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 10 điểm",
+      "ItemText": "Đã hoàn thành Trông em",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 40
+    },
+    {
+      "DateTime": "2018-04-26 11:19",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 12 điểm",
+      "ItemText": "Đã hoàn thành Trông em",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 41
     }
   ]
 }

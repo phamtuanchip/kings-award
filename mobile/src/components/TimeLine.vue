@@ -10,8 +10,12 @@
       >
         <div>
           {{child.SubTitle}}
+          <div>
           {{child.ItemText}}
+          </div>
+          <div>
           {{child.ItemInerText}} 
+          </div>
           <div>
           {{ago(child.DateTime)}}    
             

@@ -137,12 +137,19 @@ export default {
   },
   watch: {
     tasksId: function(newVal) {
-      let task = this.tasks[parseInt(newVal) - 1];
-      if (task) this.tasksName = task.Name;
+      console.log(newVal)
+      let task = this.tasks.filter((ta)=>{
+        return ta.value == newVal;
+      })
+       console.log(task)
+      if (task.length >= 1) this.tasksName = task[0].label;
+       console.log(this.tasksName)
     },
     "archives.childrenId": function(newVal) {
-      let child = this.children[parseInt(newVal) - 1];
-      if (child) this.childrenName = child.Name;
+      let child = this.children.filter((ta)=>{
+        return ta.value == newVal;
+      })
+      if (child.length >= 1) this.childrenName = child[0].label;
     }
   },
   mounted() {

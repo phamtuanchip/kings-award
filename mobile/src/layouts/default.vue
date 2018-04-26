@@ -37,29 +37,30 @@
         </q-collapsible>
         
         </q-list-header>
-        <q-item to="/profile">
-          <q-item-side icon="account circle" />
-          <q-item-main label="Account" sublabel="Account" />
+        <q-item to="/home">
+          <q-item-side icon="" />
+          <q-item-main label="News" sublabel="@home" />
         </q-item>
         <q-item to="/children">
-          <q-item-side icon="code" />
+          <q-item-side icon="face" />
           <q-item-main label="My kids" sublabel="" />
         </q-item>
         <q-item  to="/plays">
-          <q-item-side icon="chat" />
+          <q-item-side icon="extension" />
           <q-item-main label="Play" sublabel="Discover winner" />
+        </q-item>
+        <q-item to="/awards">
+          <q-item-side icon="grade" />
+          <q-item-main label="Awards" sublabel="@Awards" />
         </q-item>
         <q-item to="/rankings">
           <q-item-side icon="record_voice_over" />
           <q-item-main label="Kings" sublabel="Who is the Qeen?" />
         </q-item>
-        <q-item to="/awards">
-          <q-item-side icon="rss feed" />
-          <q-item-main label="Awards" sublabel="@Awards" />
-        </q-item>
-        <q-item to="/home">
-          <q-item-side icon="rss feed" />
-          <q-item-main label="News" sublabel="@home" />
+        
+        <q-item to="/profile">
+          <q-item-side icon="settings" />
+          <q-item-main label="Account" sublabel="Account" />
         </q-item>
       </q-list>
     </q-layout-drawer>

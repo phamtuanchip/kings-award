@@ -88,42 +88,105 @@
   ],
   "archives": [
     {
-      "DateTime": "04/27/2018",
-      "childrenId": 1,
-      "awardsId": "1",
-      "ArchivePoints": 3,
+      "DateTime": "04/14/2018",
+      "childrenId": "1",
+      "awardsId": "2",
+      "ArchivePoints": "1",
       "TaskDone": [
         {
-          "tasksId": 4,
-          "Point": 1
-        },
-        {
-          "tasksId": 4,
-          "Point": 1
-        },
-        {
-          "tasksId": 3,
-          "Point": 1
+          "tasksId": "1",
+          "Point": "1"
         }
       ],
       "id": 1
     },
     {
-      "DateTime": "04/27/2018",
-      "childrenId": 2,
-      "awardsId": "1",
-      "ArchivePoints": 4,
+      "DateTime": "04/14/2018",
+      "childrenId": "1",
+      "awardsId": "2",
+      "ArchivePoints": "3",
       "TaskDone": [
         {
-          "tasksId": 1,
-          "Point": 2
-        },
-        {
-          "tasksId": 1,
-          "Point": 2
+          "tasksId": "3",
+          "Point": "3"
         }
       ],
       "id": 2
+    },
+    {
+      "DateTime": "04/23/2018",
+      "childrenId": 1,
+      "awardsId": "1",
+      "ArchivePoints": 12,
+      "TaskDone": [
+        {
+          "tasksId": 3,
+          "Point": 2
+        },
+        {
+          "tasksId": 3,
+          "Point": 2
+        },
+        {
+          "tasksId": 2,
+          "Point": 2
+        },
+        {
+          "tasksId": 4,
+          "Point": 1
+        },
+        {
+          "tasksId": 2,
+          "Point": 1
+        },
+        {
+          "tasksId": 4,
+          "Point": 2
+        },
+        {
+          "tasksId": 4,
+          "Point": 2
+        }
+      ],
+      "id": 3
+    },
+    {
+      "DateTime": "04/23/2018",
+      "childrenId": 2,
+      "awardsId": "1",
+      "ArchivePoints": 5,
+      "TaskDone": [
+        {
+          "tasksId": 4,
+          "Point": 2
+        },
+        {
+          "tasksId": 4,
+          "Point": 1
+        },
+        {
+          "tasksId": 4,
+          "Point": 2
+        }
+      ],
+      "id": 4
+    },
+    {
+      "DateTime": "04/25/2018",
+      "childrenId": 1,
+      "awardsId": "6",
+      "ArchivePoints": -2,
+      "TaskDone": [
+        {
+          "tasksId": 2,
+          "Point": -1
+        },
+        {
+          "tasksId": 2,
+          "Point": -1
+        }
+      ],
+      "id": 5
     }
   ],
   "tasks": [
@@ -480,30 +543,6 @@
       "ItemText": "Đã hoàn thành Trông em",
       "ItemInerText": "Con đang được xếp hạng: ",
       "id": 41
-    },
-    {
-      "DateTime": "2018-04-27 12:00",
-      "Title": "Chúc mừng Nhat Minh",
-      "SubTitle": "Đã đạt được 2 điểm",
-      "ItemText": "Đã hoàn thành Trông em",
-      "ItemInerText": "Con đang được xếp hạng: ",
-      "id": 42
-    },
-    {
-      "DateTime": "2018-04-27 12:00",
-      "Title": "Chúc mừng Nhat Minh",
-      "SubTitle": "Đã đạt được 3 điểm",
-      "ItemText": "Đã hoàn thành Gấp quần áo",
-      "ItemInerText": "Con đang được xếp hạng: ",
-      "id": 43
-    },
-    {
-      "DateTime": "2018-04-27 12:01",
-      "Title": "Chúc mừng Minh Ha",
-      "SubTitle": "Đã đạt được 4 điểm",
-      "ItemText": "Đã hoàn thành Lau nhà",
-      "ItemInerText": "Con đang được xếp hạng: ",
-      "id": 44
     }
   ]
 }

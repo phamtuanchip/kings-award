@@ -1,5 +1,5 @@
 <template>
-   
+     <div>
     
      <q-card inline class="q-ma-sm">
       <q-item>
@@ -20,8 +20,17 @@
         <q-btn flat>Sửa</q-btn>
         <q-btn flat>Xem</q-btn>
       </q-card-actions>
-    </q-card>           
- 
+    </q-card>
+      <q-card inline class="q-ma-sm">
+      <q-card-media>
+        <img width="200px" height="200px" src="statics/parallax2.jpg">
+
+        <q-card-title slot="overlay">
+          Title
+        </q-card-title>
+      </q-card-media>
+    </q-card>
+     </div>
  
 </template>
 

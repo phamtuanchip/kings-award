@@ -3,6 +3,7 @@
         :title="title"
         :subtitle="full"
         :side="side"
+       
          
       >
        
@@ -21,7 +22,8 @@ export default {
   computed: {
       side:  function()
       {
-          return (parseInt(this.idx) / 2) == 1 ? "left" : "right"
+           
+          return (parseInt(this.idx) % 2) == 1 ? "left" : "right"
       },
        title:  function()
       {
@@ -29,19 +31,19 @@ export default {
       },
       full: function()
       {
-          return  Vue.moment(this.item.DateTime).format('MMMM DD, YYYYY');;
+          return  Vue.moment(this.item.DateTime).format('MMMM DD, YYYY')
       },
       day: function(){
-          return  Vue.moment(this.item.DateTime).format('DD');;
+          return  Vue.moment(this.item.DateTime).format('DD')
       },
       month: function(){
-          return Vue.moment(this.item.DateTime).format('MMM');;
+          return Vue.moment(this.item.DateTime).format('MMM')
       },
       time: function() {
-          return Vue.moment(this.item.DateTime).format('LT');
+          return Vue.moment(this.item.DateTime).format('LT')
       },
       ago: function() {
-          return Vue.moment(this.item.DateTime).startOf('hour').fromNow(); 
+          return Vue.moment(this.item.DateTime).startOf('hour').fromNow()
       }
   }
 }

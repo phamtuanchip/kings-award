@@ -1,0 +1,510 @@
+{
+  "token": {
+    "access_token": "fake-token-12345789-abcdefgh",
+    "user": {
+      "firstName": "Pham",
+      "lastName": "Tuan",
+      "email": "phamtuanchip@yahoo.de",
+      "password": "password"
+    }
+  },
+  "children": [
+    {
+      "id": 1,
+      "Name": "Nhat Minh",
+      "Nick": "Bí Ngô",
+      "Avatar": "statics/girl-avatar.png",
+      "Year": 2011,
+      "DOB": "2018-03-12",
+      "Description": "Chào bí",
+      "Gender": 1
+    },
+    {
+      "id": 2,
+      "Name": "Minh Ha",
+      "Nick": "Cherry",
+      "Avatar": "statics/girl-avatar.png",
+      "Year": 2015,
+      "DOB": "2018-04-12",
+      "Description": "hello",
+      "Gender": 1
+    }
+  ],
+  "awards": [
+    {
+      "id": 1,
+      "Title": "Phần thưởng tháng",
+      "SubTitle": "Tháng chăm ngoan",
+      "From": "2018-04-12",
+      "To": "2018-04-26",
+      "Gift": "statics/gift/g1.jpg",
+      "TargetPoint": 100
+    },
+    {
+      "id": 2,
+      "Title": "Phần thưởng tháng",
+      "SubTitle": "Tháng chăm ngoan",
+      "From": "2018-04-26",
+      "To": "2018-04-30",
+      "Gift": "statics/gift/g2.jpg",
+      "TargetPoint": 10
+    },
+    {
+      "id": 3,
+      "Title": "Phần thưởng tháng",
+      "SubTitle": "Tháng chăm ngoan",
+      "From": "2018-04-26",
+      "To": "2018-04-30",
+      "Gift": "statics/gift/g3.jpg",
+      "TargetPoint": 10
+    },
+    {
+      "id": 4,
+      "Title": "Phần thưởng tháng",
+      "SubTitle": "Tháng chăm ngoan",
+      "From": "2018-04-26",
+      "To": "2018-04-30",
+      "Gift": "statics/gift/g4.jpg",
+      "TargetPoint": 10
+    },
+    {
+      "id": 5,
+      "Title": "Phần thưởng tháng",
+      "SubTitle": "Tháng chăm ngoan",
+      "From": "2018-04-26",
+      "To": "2018-04-30",
+      "Gift": "statics/gift/g5.jpg",
+      "TargetPoint": 10
+    },
+    {
+      "id": 6,
+      "Title": "Phần thưởng tháng",
+      "SubTitle": "Tháng chăm ngoan",
+      "From": "2018-04-26",
+      "To": "2018-04-30",
+      "Gift": "statics/gift/g6.jpg",
+      "TargetPoint": 10
+    }
+  ],
+  "archives": [
+    {
+      "DateTime": "04/27/2018",
+      "childrenId": 1,
+      "awardsId": "1",
+      "ArchivePoints": 3,
+      "TaskDone": [
+        {
+          "tasksId": 4,
+          "Point": 1
+        },
+        {
+          "tasksId": 4,
+          "Point": 1
+        },
+        {
+          "tasksId": 3,
+          "Point": 1
+        }
+      ],
+      "id": 1
+    },
+    {
+      "DateTime": "04/27/2018",
+      "childrenId": 2,
+      "awardsId": "1",
+      "ArchivePoints": 4,
+      "TaskDone": [
+        {
+          "tasksId": 1,
+          "Point": 2
+        },
+        {
+          "tasksId": 1,
+          "Point": 2
+        }
+      ],
+      "id": 2
+    }
+  ],
+  "tasks": [
+    {
+      "id": 1,
+      "Name": "Lau nhà",
+      "DefaultPoint": 1,
+      "ManualPoint": 0
+    },
+    {
+      "id": 2,
+      "Name": "Rửa bát",
+      "DefaultPoint": 3,
+      "ManualPoint": 0
+    },
+    {
+      "id": 3,
+      "Name": "Gấp quần áo a",
+      "DefaultPoint": 3,
+      "ManualPoint": 0,
+      "__index": 2
+    },
+    {
+      "id": 4,
+      "Name": "Trông em",
+      "DefaultPoint": 3,
+      "ManualPoint": 0
+    }
+  ],
+  "activities": [
+    {
+      "id": 1,
+      "DateTime": "2018-04-11 12:30",
+      "Title": "Item tile",
+      "SubTitle": "Item sub title",
+      "ItemText": "Item text here",
+      "ItemInerText": "Item in box content"
+    },
+    {
+      "id": 2,
+      "DateTime": "2018-04-12 13:30",
+      "Title": "Item tile2",
+      "SubTitle": "Item sub title2",
+      "ItemText": "Item text here2",
+      "ItemInerText": "Item in box content2"
+    },
+    {
+      "id": 3,
+      "DateTime": "2018-04-13 14:30",
+      "Title": "Item tile2",
+      "SubTitle": "Item sub title2",
+      "ItemText": "Item text here2",
+      "ItemInerText": "Item in box content2"
+    },
+    {
+      "id": 4,
+      "DateTime": "2018-04-13 15:30",
+      "Title": "Item tile2",
+      "SubTitle": "Item sub title2",
+      "ItemText": "Item text here2",
+      "ItemInerText": "Item in box content2"
+    },
+    {
+      "id": 5,
+      "DateTime": "2018-04-13 16:30",
+      "Title": "Item tile2",
+      "SubTitle": "Item sub title2",
+      "ItemText": "Item text here2",
+      "ItemInerText": "Item in box content2"
+    },
+    {
+      "id": 6,
+      "DateTime": "2018-04-13 17:30",
+      "Title": "Item tile2",
+      "SubTitle": "Item sub title2",
+      "ItemText": "Item text here2",
+      "ItemInerText": "Item in box content2"
+    },
+    {
+      "id": 7,
+      "DateTime": "2018-04-13 18:30",
+      "Title": "Item tile2",
+      "SubTitle": "Item sub title2",
+      "ItemText": "Item text here2",
+      "ItemInerText": "Item in box content2"
+    },
+    {
+      "DateTime": "2018-04-14 05:42",
+      "Title": "Đã hoàn thành Trông em",
+      "SubTitle": "Đã đạt được 1 điểm",
+      "ItemText": "Chúc mừng Minh Ha",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 8
+    },
+    {
+      "DateTime": "2018-04-14 05:45",
+      "Title": "Đã hoàn thành Rửa bát",
+      "SubTitle": "Đã đạt được  điểm",
+      "ItemText": "Chúc mừng Minh Ha",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 9
+    },
+    {
+      "DateTime": "2018-04-14 05:50",
+      "Title": "Đã hoàn thành Gấp quần áo",
+      "SubTitle": "Đã đạt được 1 điểm",
+      "ItemText": "Chúc mừng Nhat Minh",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 10
+    },
+    {
+      "DateTime": "2018-04-14 05:52",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành Gấp quần áo",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 11
+    },
+    {
+      "DateTime": "2018-04-14 06:16",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành Lau nhà",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 12
+    },
+    {
+      "DateTime": "2018-04-14 06:17",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành Lau nhà",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 13
+    },
+    {
+      "DateTime": "2018-04-14 06:17",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành Rửa bát",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 14
+    },
+    {
+      "DateTime": "2018-04-14 06:19",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã đạt được  điểm",
+      "ItemText": "Đã hoàn thành ",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 15
+    },
+    {
+      "DateTime": "2018-04-14 06:19",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã đạt được  điểm",
+      "ItemText": "Đã hoàn thành ",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 16
+    },
+    {
+      "DateTime": "2018-04-14 06:20",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã đạt được  điểm",
+      "ItemText": "Đã hoàn thành ",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 17
+    },
+    {
+      "DateTime": "2018-04-14 06:26",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành Rửa bát",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 18
+    },
+    {
+      "DateTime": "2018-04-14 06:27",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành Rửa bát",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 19
+    },
+    {
+      "DateTime": "2018-04-14 06:27",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành Lau nhà",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 20
+    },
+    {
+      "DateTime": "2018-04-14 10:28",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 12 điểm",
+      "ItemText": "Đã hoàn thành Rửa bát",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 21
+    },
+    {
+      "DateTime": "2018-04-14 10:56",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành Lau nhà",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 22
+    },
+    {
+      "DateTime": "2018-04-14 10:56",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành Lau nhà",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 23
+    },
+    {
+      "DateTime": "2018-04-14 10:57",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được  điểm",
+      "ItemText": "Đã hoàn thành Gấp quần áo",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 24
+    },
+    {
+      "DateTime": "2018-04-14 10:57",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được  điểm",
+      "ItemText": "Đã hoàn thành Gấp quần áo",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 25
+    },
+    {
+      "DateTime": "2018-04-14 10:57",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 444 điểm",
+      "ItemText": "Đã hoàn thành Lau nhà",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 26
+    },
+    {
+      "DateTime": "2018-04-14 10:58",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành Rửa bát",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 27
+    },
+    {
+      "DateTime": "2018-04-14 10:58",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành Rửa bát",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 28
+    },
+    {
+      "DateTime": "2018-04-14 11:01",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 1 điểm",
+      "ItemText": "Đã hoàn thành Lau nhà",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 29
+    },
+    {
+      "DateTime": "2018-04-14 11:11",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 1 điểm",
+      "ItemText": "Đã hoàn thành Lau nhà",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 30
+    },
+    {
+      "DateTime": "2018-04-14 11:12",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 3 điểm",
+      "ItemText": "Đã hoàn thành Gấp quần áo",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 31
+    },
+    {
+      "DateTime": "2018-04-23 01:59",
+      "Title": "Chúc mừng undefined",
+      "SubTitle": "Đã đạt được 4 điểm",
+      "ItemText": "Đã hoàn thành undefined",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 32
+    },
+    {
+      "DateTime": "2018-04-23 02:06",
+      "Title": "Chúc mừng undefined",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành undefined",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 33
+    },
+    {
+      "DateTime": "2018-04-23 02:07",
+      "Title": "Chúc mừng undefined",
+      "SubTitle": "Đã đạt được 6 điểm",
+      "ItemText": "Đã hoàn thành undefined",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 34
+    },
+    {
+      "DateTime": "2018-04-25 10:46",
+      "Title": "Chúc mừng undefined",
+      "SubTitle": "Đã đạt được -2 điểm",
+      "ItemText": "Đã hoàn thành undefined",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 35
+    },
+    {
+      "DateTime": "2018-04-26 11:08",
+      "Title": "Chúc mừng undefined",
+      "SubTitle": "Đã đạt được 7 điểm",
+      "ItemText": "Đã hoàn thành undefined",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 36
+    },
+    {
+      "DateTime": "2018-04-26 11:09",
+      "Title": "Chúc mừng undefined",
+      "SubTitle": "Đã đạt được 3 điểm",
+      "ItemText": "Đã hoàn thành undefined",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 37
+    },
+    {
+      "DateTime": "2018-04-26 11:16",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 8 điểm",
+      "ItemText": "Đã hoàn thành Rửa bát",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 38
+    },
+    {
+      "DateTime": "2018-04-26 11:18",
+      "Title": "Chúc mừng Minh Ha",
+      "SubTitle": "Đã đạt được 5 điểm",
+      "ItemText": "Đã hoàn thành Trông em",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 39
+    },
+    {
+      "DateTime": "2018-04-26 11:18",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 10 điểm",
+      "ItemText": "Đã hoàn thành Trông em",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 40
+    },
+    {
+      "DateTime": "2018-04-26 11:19",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 12 điểm",
+      "ItemText": "Đã hoàn thành Trông em",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 41
+    },
+    {
+      "DateTime": "2018-04-27 12:00",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành Trông em",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 42
+    },
+    {
+      "DateTime": "2018-04-27 12:00",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 3 điểm",
+      "ItemText": "Đã hoàn thành Gấp quần áo",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 43
+    },
+    {
+      "DateTime": "2018-04-27 12:01",
+      "Title": "Chúc mừng Minh Ha",
+      "SubTitle": "Đã đạt được 4 điểm",
+      "ItemText": "Đã hoàn thành Lau nhà",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 44
+    }
+  ]
+}

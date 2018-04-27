@@ -37,7 +37,8 @@ module.exports = function (ctx) {
       // port: 8080,
       open: true // opens browser window automatically
     },
-    // framework: 'all' --- includes everything; for dev only!
+    framework: 'all', //includes everything; for dev only!
+    /*
     framework: {
       components: [
         'QLayout',
@@ -82,7 +83,8 @@ module.exports = function (ctx) {
         'QTableColumns',
         'QTooltip',
         'QChip',
-        'QPageSticky'
+        'QPageSticky',
+        'Dialog'
       ],
       directives: [
         'Ripple'
@@ -92,6 +94,7 @@ module.exports = function (ctx) {
         'Notify'
       ]
     },
+    */
     // animations: 'all' --- includes all animations
     animations: [
     ],

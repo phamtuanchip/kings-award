@@ -13,7 +13,8 @@ export default [
       { path: 'user', component: () => import('components/User')},  
       { path: 'profile', component: () => import('components/Profile')},
       { path: 'children', component: () => import('components/Children')} ,
-      { path: 'awards', component: () => import('components/Awards')}    
+      { path: 'awards', component: () => import('components/Awards')},
+      { path: 'tasks', component: () => import('components/Tasks')}      
     ]
   },
   { // Always leave this as last one

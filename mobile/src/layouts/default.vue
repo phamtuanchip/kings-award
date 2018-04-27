@@ -38,7 +38,7 @@
         
         </q-list-header>
         <q-item to="/home">
-          <q-item-side icon="" />
+          <q-item-side icon="history" />
           <q-item-main label="News" sublabel="@home" />
         </q-item>
         <q-item to="/children">
@@ -61,6 +61,12 @@
         <q-item to="/profile">
           <q-item-side icon="settings" />
           <q-item-main label="Account" sublabel="Account" />
+          
+        </q-item>
+         <q-item to="/tasks">
+          <q-item-side icon="playlist add" />
+          <q-item-main label="Tasks" sublabel="Tasks" />
+          
         </q-item>
       </q-list>
     </q-layout-drawer>

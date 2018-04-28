@@ -1,7 +1,8 @@
 <template>
-<q-page>   
-   <q-page-sticky position="top-left" :offset="[18, 18]">
-    <q-btn round color="primary" @click="add" icon="add" />
+<q-page>
+  <q-layout>   
+   <q-page-sticky position="bottom-right" :offset="[18, 18]">
+    <q-btn round color="primary" @click.native="add" icon="add" />
   </q-page-sticky>
  <q-table
       :data="items"
@@ -38,7 +39,34 @@
       
       </q-tr>
     </q-table>
-    <Task />
+     
+    </q-layout>
+    <q-dialog
+    v-model="customDialogModel"
+    stack-buttons
+    prevent-close
+    @ok="onOk"
+    @cancel="onCancel"
+    @show="onShow"
+    @hide="onHide"
+  >
+    <!-- This or use "title" prop on <q-dialog> -->
+    <span slot="title">Favorite Superhero</span>
+
+    <!-- This or use "message" prop on <q-dialog> -->
+    <span slot="message">What is your superhero of choice?</span>
+
+    <div slot="body">
+      <Task />
+    </div>
+
+    <template slot="buttons" slot-scope="props">
+      <q-btn color="primary" label="Choose Superman" @click="choose(props.ok, 'Superman')" />
+      <q-btn color="black" label="Choose Batman" @click="choose(props.ok, 'Batman')" />
+      <q-btn color="negative" label="Choose Spiderman" @click="choose(props.ok, 'Spiderman')" />
+      <q-btn flat label="No thanks" @click="props.cancel" />
+    </template>
+  </q-dialog>   
 </q-page>
 </template>
 <script>
@@ -48,6 +76,8 @@ export default {
   components: { Task },
   data() {
     return {
+      customDialogModel : false,
+      name: '',
       items: [],
       columns: [
         {
@@ -62,9 +92,34 @@ export default {
     };
   },
   methods: {
+      onOk (data) { },
+
+    // when props.cancel() gets called
+    onCancel () { },
+
+    // when we show it to the user
+    onShow () { },
+
+    // when it gets hidden
+    onHide () { },
+
+    // custom handler
+    async choose (okFn, hero) {
+      if (this.name.length === 0) {
+        this.$q.dialog({
+          title: 'Please specify your name!',
+          message: `Can't buy tickets without knowing your name.`
+        })
+      }
+      else {
+        await okFn()
+        this.$q.notify(`Ok ${this.name}, going with ${hero}`)
+      }
+    },
     edit(id) {},
     add() {
-      Task.show()
+       alert('test')
+       this.customDialogModel = true
     },
     getTasks() {
       this.api.getData("tasks").then(

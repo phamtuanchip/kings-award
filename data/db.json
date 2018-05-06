@@ -91,7 +91,7 @@
       "DateTime": "04/27/2018",
       "childrenId": 1,
       "awardsId": "1",
-      "ArchivePoints": 3,
+      "ArchivePoints": 1,
       "TaskDone": [
         {
           "tasksId": 4,
@@ -104,6 +104,11 @@
         {
           "tasksId": 3,
           "Point": 1
+        },
+        {},
+        {
+          "tasksId": "",
+          "Point": -1
         }
       ],
       "id": 1
@@ -112,7 +117,7 @@
       "DateTime": "04/27/2018",
       "childrenId": 2,
       "awardsId": "1",
-      "ArchivePoints": 4,
+      "ArchivePoints": 1,
       "TaskDone": [
         {
           "tasksId": 1,
@@ -121,9 +126,29 @@
         {
           "tasksId": 1,
           "Point": 2
-        }
+        },
+        {
+          "tasksId": ""
+        },
+        {},
+        {}
       ],
       "id": 2
+    },
+    {
+      "DateTime": "05/06/2018",
+      "childrenId": "",
+      "awardsId": "1",
+      "ArchivePoints": -3,
+      "TaskDone": [
+        {},
+        {},
+        {
+          "tasksId": 18,
+          "Point": -1
+        }
+      ],
+      "id": 3
     }
   ],
   "tasks": [
@@ -187,6 +212,54 @@
       "DefaultPoint": -1,
       "ManualPoint": 0,
       "id": 10
+    },
+    {
+      "Name": "Nhắc học bài nhiều lần",
+      "DefaultPoint": -1,
+      "ManualPoint": 0,
+      "id": 11
+    },
+    {
+      "Name": "Vẽ mầu lên tường",
+      "DefaultPoint": -1,
+      "ManualPoint": 0,
+      "id": 12
+    },
+    {
+      "Name": "bầy đồ chơi khắp nhà",
+      "DefaultPoint": -1,
+      "ManualPoint": 0,
+      "id": 13
+    },
+    {
+      "Name": "con bầy đồ chơi khắp nhà",
+      "DefaultPoint": -1,
+      "ManualPoint": 0,
+      "id": 14
+    },
+    {
+      "Name": "nghịch ngợm",
+      "DefaultPoint": -1,
+      "ManualPoint": 0,
+      "id": 15
+    },
+    {
+      "Name": "không ngoan",
+      "DefaultPoint": -1,
+      "ManualPoint": 0,
+      "id": 16
+    },
+    {
+      "Name": "nhắc nhiều việc học tập",
+      "DefaultPoint": -1,
+      "ManualPoint": 0,
+      "id": 17
+    },
+    {
+      "Name": "con đã hư",
+      "DefaultPoint": -1,
+      "ManualPoint": 0,
+      "id": 18
     }
   ],
   "activities": [
@@ -541,6 +614,62 @@
       "ItemText": "Đã hoàn thành Lau nhà",
       "ItemInerText": "Con đang được xếp hạng: ",
       "id": 44
+    },
+    {
+      "DateTime": "2018-05-06 06:09",
+      "Title": "Chúc mừng Minh Ha",
+      "SubTitle": "Đã đạt được 3 điểm",
+      "ItemText": "Đã hoàn thành ",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 45
+    },
+    {
+      "DateTime": "2018-05-06 06:11",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã đạt được -2 điểm",
+      "ItemText": "Đã hoàn thành bầy đồ chơi khắp nhà",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 46
+    },
+    {
+      "DateTime": "2018-05-06 06:13",
+      "Title": "Chúc mừng Minh Ha",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành con bầy đồ chơi khắp nhà",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 47
+    },
+    {
+      "DateTime": "2018-05-06 06:13",
+      "Title": "Chúc mừng Minh Ha",
+      "SubTitle": "Đã đạt được 1 điểm",
+      "ItemText": "Đã hoàn thành nghịch ngợm",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 48
+    },
+    {
+      "DateTime": "2018-05-06 06:14",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 2 điểm",
+      "ItemText": "Đã hoàn thành không ngoan",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 49
+    },
+    {
+      "DateTime": "2018-05-06 06:18",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 1 điểm",
+      "ItemText": "Đã hoàn thành nhắc nhiều việc học tập",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 50
+    },
+    {
+      "DateTime": "2018-05-06 06:19",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã bị trừ -3 điểm",
+      "ItemText": "Đã hoàn thành con đã hư",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 51
     }
   ]
 }

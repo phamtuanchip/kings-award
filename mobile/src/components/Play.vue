@@ -201,7 +201,7 @@ export default {
       let activities = {
         DateTime: Vue.moment().format("YYYY-MM-DD hh:mm"),
         Title: "Chúc mừng " + this.childrenName,
-        SubTitle: "Đã đạt được " + archives.ArchivePoints + " điểm",
+        SubTitle: archives.ArchivePoints >= 0 ?  "Đã đạt được " + archives.ArchivePoints + " điểm" : "Đã bị trừ " + archives.ArchivePoints + " điểm",
         ItemText: "Đã hoàn thành " + this.tasksName,
         ItemInerText: "Con đang được xếp hạng: "
       };
@@ -215,28 +215,33 @@ export default {
     save() {
       //console.log(this.group)
       //return ;
-      let tId = undefined;
-      let tPoint = undefined;
+     // let tId = undefined;
+      //let tPoint = undefined;
       if(this.newTask && this.newTask.trim() != "") {
         let task = {Name: this.newTask, DefaultPoint: this.Point, ManualPoint: this.newPoint }
           this.api.postData("tasks", task).then(
               res => {
-                console.log(res)
-                tId =res.data.id;
-                tPoint = res.data.Point;
-                this.getTasks()
+                //console.log(res)
+                 this.getTasks()
+                this.tasksId =res.data.id;
+                this.Point = res.data.DefaultPoint;
+                this.tasksName = res.data.Name;
+
+               
+                /*
                 this.$q.notify({
                         color: 'secondary',
                         icon: 'star',
                         message: 'Đã thêm mới công việc thành công!'
                       })
+                      */
               },
               err => {
                 console.log(err);
               }
             );
          
-        return;
+       /// return;
       }
       let archives = {};
       this.searchArchives(
@@ -252,8 +257,8 @@ export default {
             archives.TaskDone = [];
             archives.ArchivePoints = this.Point;
             archives.TaskDone.push({
-              tasksId: tId == undefined ? tId : this.tasksId,
-              Point: tPoint == undefined ? tPoint : this.Point
+              tasksId:   this.tasksId,
+              Point:   this.Point
             });
             this.api.postData("archives", archives).then(
               res => {
@@ -274,7 +279,7 @@ export default {
           console.log(archives)
 
          
-          archives.TaskDone.push({ tasksId: tId == undefined ? tId : this.tasksId, Point: tPoint == undefined ? tPoint : this.Point });
+          archives.TaskDone.push({ tasksId:  this.tasksId, Point:   this.Point });
           let pCount = 0;
           archives.ArchivePoints += this.Point;
           this.api.putData("archives/" + archives.id, archives).then(

@@ -151,6 +151,42 @@
       "Name": "Trông em",
       "DefaultPoint": 3,
       "ManualPoint": 0
+    },
+    {
+      "Name": "Nhặt rau giúp ba",
+      "DefaultPoint": 2,
+      "ManualPoint": 0,
+      "id": 5
+    },
+    {
+      "Name": "vầy nước đái",
+      "DefaultPoint": -1,
+      "ManualPoint": 0,
+      "id": 6
+    },
+    {
+      "Name": "vầy nước đái",
+      "DefaultPoint": -1,
+      "ManualPoint": 0,
+      "id": 7
+    },
+    {
+      "Name": "vầy nước đái",
+      "DefaultPoint": -1,
+      "ManualPoint": 0,
+      "id": 8
+    },
+    {
+      "Name": "Tè dầm",
+      "DefaultPoint": -1,
+      "ManualPoint": 0,
+      "id": 9
+    },
+    {
+      "Name": "không nghe lời ba",
+      "DefaultPoint": -1,
+      "ManualPoint": 0,
+      "id": 10
     }
   ],
   "activities": [

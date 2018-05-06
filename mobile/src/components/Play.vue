@@ -215,6 +215,29 @@ export default {
     save() {
       //console.log(this.group)
       //return ;
+      let tId = undefined;
+      let tPoint = undefined;
+      if(this.newTask && this.newTask.trim() != "") {
+        let task = {Name: this.newTask, DefaultPoint: this.Point, ManualPoint: this.newPoint }
+          this.api.postData("tasks", task).then(
+              res => {
+                console.log(res)
+                tId =res.data.id;
+                tPoint = res.data.Point;
+                this.getTasks()
+                this.$q.notify({
+                        color: 'secondary',
+                        icon: 'star',
+                        message: 'Đã thêm mới công việc thành công!'
+                      })
+              },
+              err => {
+                console.log(err);
+              }
+            );
+         
+        return;
+      }
       let archives = {};
       this.searchArchives(
         this.archives.childrenId,
@@ -229,8 +252,8 @@ export default {
             archives.TaskDone = [];
             archives.ArchivePoints = this.Point;
             archives.TaskDone.push({
-              tasksId: this.tasksId,
-              Point: this.Point
+              tasksId: tId == undefined ? tId : this.tasksId,
+              Point: tPoint == undefined ? tPoint : this.Point
             });
             this.api.postData("archives", archives).then(
               res => {
@@ -251,7 +274,7 @@ export default {
           console.log(archives)
 
          
-          archives.TaskDone.push({ tasksId: this.tasksId, Point: this.Point });
+          archives.TaskDone.push({ tasksId: tId == undefined ? tId : this.tasksId, Point: tPoint == undefined ? tPoint : this.Point });
           let pCount = 0;
           archives.ArchivePoints += this.Point;
           this.api.putData("archives/" + archives.id, archives).then(

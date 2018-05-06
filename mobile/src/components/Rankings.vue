@@ -1,7 +1,7 @@
 <template>
 <q-page>
      
- <div id="wrapper">
+ <div id="wrapper" v-if="isShowChart">
     <div id="container">
 
         <ol class="organizational-chart">
@@ -211,11 +211,16 @@
 
     </div>
 </div>
+ <div v-else>
+     
+ </div>
 </q-page>
 </template>
 <script>
 export default {
-  
+  data() {return{
+      isShowChart: false
+  }}
 }
 </script>
 <style scoped>

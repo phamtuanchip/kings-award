@@ -10,6 +10,15 @@
       row-key="id"
     >
       <q-tr slot="body" slot-scope="props" :props="props">
+         <q-td key="id" :props="props">
+            <div class="row items-center justify-between no-wrap">
+            <q-btn size="sm" round dense color="secondary" icon="remove" @click="remove(props.row)" class="q-mr-xs" />
+             <div>{{ props.row.id }}</div>
+            <q-btn size="sm" round dense color="tertiary" icon="add" @click="edit(props.row)" class="q-mr-sm" />
+           
+          </div>
+           
+        </q-td>  
         <q-td key="Name" :props="props" >
           <span @click="rowClick(props.row)" >
            {{ props.row.Name }}
@@ -19,18 +28,14 @@
         </q-td>
          <q-td key="DefaultPoint" :props="props">
             <div class="row items-center justify-between no-wrap">
-            <q-btn size="sm" round dense color="secondary" icon="remove" @click="props.row.DefaultPoint--" class="q-mr-xs" />
-             <div>{{ props.row.DefaultPoint }}</div>
-            <q-btn size="sm" round dense color="tertiary" icon="add" @click="props.row.DefaultPoint++" class="q-mr-sm" />
+             {{ props.row.DefaultPoint }} 
            
           </div>
            
         </q-td>         
         <q-td key="ManualPoint" :props="props">
            <div class="row items-center justify-between no-wrap">
-            <q-btn size="sm" round dense color="secondary" icon="remove" @click="props.row.ManualPoint--" class="q-mr-xs" />
-             <div> {{ props.row.ManualPoint }}</div>
-            <q-btn size="sm" round dense color="tertiary" icon="add" @click="props.row.ManualPoint++" class="q-mr-sm" />
+              {{ props.row.ManualPoint }} 
            
           </div>
          
@@ -43,105 +48,143 @@
     </q-layout>
     <q-dialog
     v-model="customDialogModel"
-    stack-buttons
-    prevent-close
-    @ok="onOk"
-    @cancel="onCancel"
+    
+   
     @show="onShow"
     @hide="onHide"
   >
     <!-- This or use "title" prop on <q-dialog> -->
-    <span slot="title">Favorite Superhero</span>
+    <span slot="title">Nhập công việc</span>
 
-    <!-- This or use "message" prop on <q-dialog> -->
+    <!-- This or use "message" prop on <q-dialog> 
     <span slot="message">What is your superhero of choice?</span>
+    -->
 
     <div slot="body">
-      <Task />
+      <Task :oldTask="selected" :ok="onOk" :cancel="onCancel"/>
     </div>
-
-    <template slot="buttons" slot-scope="props">
-      <q-btn color="primary" label="Choose Superman" @click="choose(props.ok, 'Superman')" />
-      <q-btn color="black" label="Choose Batman" @click="choose(props.ok, 'Batman')" />
-      <q-btn color="negative" label="Choose Spiderman" @click="choose(props.ok, 'Spiderman')" />
-      <q-btn flat label="No thanks" @click="props.cancel" />
-    </template>
+ 
   </q-dialog>   
 </q-page>
 </template>
 <script>
 import Task from "components/Task";
-
+const newTask = {
+  Name: "",
+  DefaultPoint: "",
+  ManualPoint: 0
+};
 export default {
   components: { Task },
   data() {
     return {
-      customDialogModel : false,
-      name: '',
+      customDialogModel: false,
+      selected: newTask,
+      name: "",
       items: [],
       columns: [
+        {
+          name: "id",
+          label: "Mã",
+          field: "id"
+        },
         {
           name: "Name",
           label: "Tên",
           field: "Name",
           sortable: true
         },
-        { name: "DefaultPoint", label: "Điểm chuẩn", field: "DefaultPoint" },
-        { name: "ManualPoint", label: "Điểm thêm", field: "ManualPoint" }
+        {
+          name: "DefaultPoint",
+          label: "Điểm chuẩn",
+          field: "DefaultPoint",
+          sortable: true
+        },
+        {
+          name: "ManualPoint",
+          label: "Điểm thêm",
+          field: "ManualPoint",
+          sortable: true
+        }
       ]
     };
   },
   methods: {
-      onOk (data) { },
+    onOk(isClose) {
+      this.getTasks();
+      this.customDialogModel = !isClose;
+      this.selected = newTask;
+      this.$forceUpdate();
+    },
 
     // when props.cancel() gets called
-    onCancel () { },
+    onCancel(isShow) {
+      //console.log('cancel ' + isShow)
+      this.customDialogModel = !isShow;
+      this.selected = newTask;
+      this.$forceUpdate();
+    },
 
     // when we show it to the user
-    onShow () { },
+    onShow() {},
 
     // when it gets hidden
-    onHide () { },
+    onHide() {},
 
     // custom handler
-    async choose (okFn, hero) {
-      if (this.name.length === 0) {
-        this.$q.dialog({
-          title: 'Please specify your name!',
-          message: `Can't buy tickets without knowing your name.`
-        })
-      }
-      else {
-        await okFn()
-        this.$q.notify(`Ok ${this.name}, going with ${hero}`)
-      }
+    async choose(okFn, hero) {
+       
     },
-    edit(id) {},
+    edit(task) {
+      this.selected = task;
+      this.$forceUpdate();
+      this.customDialogModel = true;
+    },
     add() {
-        
-       this.customDialogModel = true
+      this.selected = newTask;
+      this.$forceUpdate();
+      this.customDialogModel = true;
     },
     getTasks() {
       this.api.getData("tasks").then(
         res => {
           this.items = res.data;
-          console.log(this.children);
         },
         err => {
           console.log(err);
         }
       );
     },
-    deleteRow() {
-      this.$q.notify({
-        color: "secondary",
-        icon: "delete",
-        message: `Will delete the selected row${
-          this.selectedSecond.length > 1 ? "s" : ""
-        } later, ok?`
-      });
+    remove(task) {
+      this.$q
+        .dialog({
+          title: "Cảnh báo",
+          message: "Bạn muốn xóa '"+task.Name+"' này?.",
+          ok: "Xóa",
+          cancel: "Không"
+        })
+        .then(() => {
+          console.log('test xóa')
+          this.api.deleteData("tasks/" + task.id.toString()).then(
+            res => {
+              //this.items = res.data;
+              this.getTasks();
+              this.$q.notify("Xóa thành công!");
+              
+            },
+            err => {
+              console.log(err);
+            }
+          );
+        })
+        .catch(() => {
+          //this.$q.notify('Disagreed...')
+        });
     },
     rowClick(row) {
+      this.selected = row;
+      this.customDialogModel = true;
+      return;
       let configObj = {
         title: "Sửa",
         message: "Sửa lại tên công việc",
@@ -154,23 +197,21 @@ export default {
       };
       this.$q
         .dialog(configObj)
-        .then((data) => {
-          console.log(row)
+        .then(data => {
           row.Name = data;
-           this.api.putData('tasks/' + row.id.toString(), row).then(
-              res => {
-                 
-                this.$q.notify({
-                        color: 'secondary',
-                        icon: 'star',
-                        message: 'Đã chỉnh sửa thành công!'
-                      })
-                this.getTasks()      
-              },
-              err => {
-                console.log(err);
-              }
-            );
+          this.api.putData("tasks/" + row.id.toString(), row).then(
+            res => {
+              this.$q.notify({
+                color: "secondary",
+                icon: "star",
+                message: "Đã chỉnh sửa thành công!"
+              });
+              this.getTasks();
+            },
+            err => {
+              console.log(err);
+            }
+          );
           // Picked "OK"
         })
         .catch(() => {
@@ -183,3 +224,4 @@ export default {
   }
 };
 </script>
+

@@ -5,7 +5,7 @@ export default [
     component: () => import('layouts/default'),
     redirect: 'home',
     children: [
-      { path: '', component: () => import('pages/index') },
+      //{ path: '', component: () => import('pages/index') },
       { path: 'home', component: () => import('components/Home')},
       { path: 'rankings', component: () => import('components/Rankings')},
       { path: 'plays', component: () => import('components/Plays')},

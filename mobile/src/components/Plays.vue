@@ -70,7 +70,7 @@
    
     edit() {},
     play(){
-       console.log(this.slide)
+       
       this.$router.push('/play/'+(this.slide+1))
     },
     getChildren() {
@@ -79,8 +79,7 @@
           this.children = res.data.map(child =>{
             return {'label': child.Name, 'value': child.id}
           })
-          console.log(this.children);
-          // this.customer.avatar = '/assets/' + this.customer.avatar
+         
         },
         err => {
           console.log(err);
@@ -90,7 +89,7 @@
     getAwards(){
       this.api.getData('awards').then((res) => {
         this.items = res.data
-        console.log(this.children) 
+         
       }, (err) => {
         console.log(err)
       })

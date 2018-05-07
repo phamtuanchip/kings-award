@@ -54,10 +54,10 @@ export default {
        
     },
      getChildren () {
-      console.log(this.api) 
+      
       this.api.getData('activities?_sort=DateTime&_order=desc').then((res) => {
         this.children = res.data
-        console.log(this.children) 
+         
       }, (err) => {
         console.log(err)
       })

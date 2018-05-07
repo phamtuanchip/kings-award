@@ -136,130 +136,59 @@
       "id": 2
     },
     {
-      "DateTime": "05/06/2018",
-      "childrenId": "",
-      "awardsId": "1",
-      "ArchivePoints": -3,
+      "DateTime": "05/07/2018",
+      "childrenId": 1,
+      "awardsId": "3",
+      "ArchivePoints": 4,
       "TaskDone": [
-        {},
-        {},
         {
-          "tasksId": 18,
-          "Point": -1
+          "tasksId": "",
+          "Point": 2
+        },
+        {
+          "tasksId": "",
+          "Point": 2
         }
       ],
-      "id": 3
+      "id": 6
     }
   ],
   "tasks": [
     {
-      "id": 1,
-      "Name": "Lau nhà",
+      "Name": "CÔNG VIỆC HÀNG NGÀY",
       "DefaultPoint": 1,
-      "ManualPoint": 0
-    },
-    {
-      "id": 2,
-      "Name": "Rửa bát",
-      "DefaultPoint": 3,
-      "ManualPoint": 0
-    },
-    {
-      "id": 3,
-      "Name": "Gấp quần áo",
-      "DefaultPoint": 3,
       "ManualPoint": 0,
-      "__index": 2
+      "id": 2
     },
     {
-      "id": 4,
-      "Name": "Trông em",
-      "DefaultPoint": 3,
-      "ManualPoint": 0
+      "Name": "CÔNG VIỆC HÀNG NGÀ",
+      "DefaultPoint": 1,
+      "ManualPoint": 0,
+      "id": 3
     },
     {
-      "Name": "Nhặt rau giúp ba",
+      "Name": "RỬA XE GIÚP BA",
       "DefaultPoint": 2,
+      "ManualPoint": 0,
+      "id": 4
+    },
+    {
+      "Name": "HƯ",
+      "DefaultPoint": -1,
       "ManualPoint": 0,
       "id": 5
     },
     {
-      "Name": "vầy nước đái",
-      "DefaultPoint": -1,
+      "Name": "123",
+      "DefaultPoint": 2,
       "ManualPoint": 0,
       "id": 6
     },
     {
-      "Name": "vầy nước đái",
-      "DefaultPoint": -1,
+      "Name": "KIỂM THỬ NHA",
+      "DefaultPoint": 2,
       "ManualPoint": 0,
       "id": 7
-    },
-    {
-      "Name": "vầy nước đái",
-      "DefaultPoint": -1,
-      "ManualPoint": 0,
-      "id": 8
-    },
-    {
-      "Name": "Tè dầm",
-      "DefaultPoint": -1,
-      "ManualPoint": 0,
-      "id": 9
-    },
-    {
-      "Name": "không nghe lời ba",
-      "DefaultPoint": -1,
-      "ManualPoint": 0,
-      "id": 10
-    },
-    {
-      "Name": "Nhắc học bài nhiều lần",
-      "DefaultPoint": -1,
-      "ManualPoint": 0,
-      "id": 11
-    },
-    {
-      "Name": "Vẽ mầu lên tường",
-      "DefaultPoint": -1,
-      "ManualPoint": 0,
-      "id": 12
-    },
-    {
-      "Name": "bầy đồ chơi khắp nhà",
-      "DefaultPoint": -1,
-      "ManualPoint": 0,
-      "id": 13
-    },
-    {
-      "Name": "con bầy đồ chơi khắp nhà",
-      "DefaultPoint": -1,
-      "ManualPoint": 0,
-      "id": 14
-    },
-    {
-      "Name": "nghịch ngợm",
-      "DefaultPoint": -1,
-      "ManualPoint": 0,
-      "id": 15
-    },
-    {
-      "Name": "không ngoan",
-      "DefaultPoint": -1,
-      "ManualPoint": 0,
-      "id": 16
-    },
-    {
-      "Name": "nhắc nhiều việc học tập",
-      "DefaultPoint": -1,
-      "ManualPoint": 0,
-      "id": 17
-    },
-    {
-      "Name": "con đã hư",
-      "DefaultPoint": -1,
-      "ManualPoint": 0,
-      "id": 18
     }
   ],
   "activities": [
@@ -670,6 +599,110 @@
       "ItemText": "Đã hoàn thành con đã hư",
       "ItemInerText": "Con đang được xếp hạng: ",
       "id": 51
+    },
+    {
+      "DateTime": "2018-05-06 09:38",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã bị trừ -2 điểm",
+      "ItemText": "Đã hoàn thành trừ điểm",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 52
+    },
+    {
+      "DateTime": "2018-05-06 09:39",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã bị trừ -3 điểm",
+      "ItemText": "Đã hoàn thành trừ điểm",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 53
+    },
+    {
+      "DateTime": "2018-05-06 09:49",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã bị trừ -1 điểm",
+      "ItemText": "Đã hoàn thành undefined",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 54
+    },
+    {
+      "DateTime": "2018-05-06 09:50",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã đạt được 1 điểm",
+      "ItemText": "Đã hoàn thành CÔNG VIỆC 1",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 55
+    },
+    {
+      "DateTime": "2018-05-06 09:51",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã đạt được 4 điểm",
+      "ItemText": "Đã hoàn thành CÔNG VIỆC 1",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 56
+    },
+    {
+      "DateTime": "2018-05-06 11:00",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã bị trừ -2 điểm",
+      "ItemText": "Đã hoàn thành undefined",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 57
+    },
+    {
+      "DateTime": "2018-05-06 11:12",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã đạt được 3 điểm",
+      "ItemText": "Đã hoàn thành undefined",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 58
+    },
+    {
+      "DateTime": "2018-05-06 11:18",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã đạt được 5 điểm",
+      "ItemText": "Đã hoàn thành ",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 59
+    },
+    {
+      "DateTime": "2018-05-06 11:20",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã đạt được 6 điểm",
+      "ItemText": "Đã hoàn thành undefined",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 60
+    },
+    {
+      "DateTime": "2018-05-07 12:07",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã bị trừ -1 điểm",
+      "ItemText": "Đã hoàn thành ",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 61
+    },
+    {
+      "DateTime": "2018-05-07 12:12",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã đạt được 5 điểm",
+      "ItemText": "Đã hoàn thành undefined",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 62
+    },
+    {
+      "DateTime": "2018-05-07 12:13",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã đạt được 5 điểm",
+      "ItemText": "Đã hoàn thành undefined",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 63
+    },
+    {
+      "DateTime": "2018-05-07 12:17",
+      "Title": "Chúc mừng Nhat Minh",
+      "SubTitle": "Đã đạt được 4 điểm",
+      "ItemText": "Đã hoàn thành ",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 64
     }
   ]
 }

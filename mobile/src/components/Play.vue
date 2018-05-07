@@ -99,7 +99,7 @@
       >
         <q-input type="number"  v-model="newPoint" float-label="Cho điểm" />
       </q-field>
-      <q-btn icon="create" label="New item"  color="primary"
+      <q-btn icon="save" label="Lưu"  color="primary"
     @click="save" />
   </q-page>
 </template>
@@ -137,23 +137,23 @@ export default {
   },
   watch: {
     tasksId: function(newVal) {
-      console.log(newVal)
-      let task = this.tasks.filter((ta)=>{
+      console.log(newVal);
+      let task = this.tasks.filter(ta => {
         return ta.value == newVal;
-      })
-       console.log(task)
+      });
+      console.log(task);
       if (task.length >= 1) this.tasksName = task[0].label;
-       console.log(this.tasksName)
+      console.log(this.tasksName);
     },
     "archives.childrenId": function(newVal) {
-      let child = this.children.filter((ta)=>{
+      let child = this.children.filter(ta => {
         return ta.value == newVal;
-      })
+      });
       if (child.length >= 1) this.childrenName = child[0].label;
     }
   },
   mounted() {
-    console.log(this.$route.params.id);
+    
     this.getItemById();
     this.getChildren();
     this.getTasks();
@@ -161,15 +161,15 @@ export default {
   methods: {
     searchArchives(childId, awardId) {
       let promise = new Promise((resolve, reject) => {
-        let archive = {};
+        let archive = undefined;
         this.api
           .getData("archives/?childrenId=" + childId + "&awardsId=" + awardId)
           .then(
             res => {
               archive = res.data;
-              console.log(archive);
+              
               resolve(archive);
-              // this.customer.avatar = '/assets/' + this.customer.avatar
+              
             },
             err => {
               console.log(err);
@@ -178,30 +178,17 @@ export default {
           );
       });
       return promise;
-      /*
-      let archive = {};
-      this.api
-        .getData("archives?childrenId=" + childId + "&awardsId=" + awardId)
-        .then(
-          res => {
-            archive = res.data;
-            console.log(archive);
-            return promise.resolve(archive);
-            // this.customer.avatar = '/assets/' + this.customer.avatar
-          },
-          err => {
-            console.log(err);
-            return promise.resolve(archive);
-          }
-        );
-        */
+      
     },
     updateImage() {},
     updateActivities(archives) {
       let activities = {
         DateTime: Vue.moment().format("YYYY-MM-DD hh:mm"),
         Title: "Chúc mừng " + this.childrenName,
-        SubTitle: archives.ArchivePoints >= 0 ?  "Đã đạt được " + archives.ArchivePoints + " điểm" : "Đã bị trừ " + archives.ArchivePoints + " điểm",
+        SubTitle:
+          archives.ArchivePoints >= 0
+            ? "Đã đạt được " + archives.ArchivePoints + " điểm"
+            : "Đã bị trừ " + archives.ArchivePoints + " điểm",
         ItemText: "Đã hoàn thành " + this.tasksName,
         ItemInerText: "Con đang được xếp hạng: "
       };
@@ -212,36 +199,63 @@ export default {
         }
       );
     },
+    searchTaskByName(name) {
+      //?title=json-server&author=typicode
+
+      let promise = new Promise((resolve, reject) => {
+        let task = undefined;
+        this.api.getData("tasks?Name=" + name.toUpperCase()).then(
+          res => {
+            task = res.data;
+            console.log('task ',task);
+            if(task.constructor == Array && task.length >0)
+            resolve(task[0]);
+            else {
+            reject(undefined);
+            }
+          },
+          err => {
+            console.log(err);
+            reject(undefined);
+          }
+        );
+      });
+      return promise;
+    },
     save() {
       //console.log(this.group)
       //return ;
-     // let tId = undefined;
+      // let tId = undefined;
       //let tPoint = undefined;
-      if(this.newTask && this.newTask.trim() != "") {
-        let task = {Name: this.newTask, DefaultPoint: this.Point, ManualPoint: this.newPoint }
-          this.api.postData("tasks", task).then(
+      if (this.newTask && this.newTask.trim() != "") {
+        this.searchTaskByName(this.newTask).then(
+          task => {
+            console.log('task ', task)
+            if (!task)
+              task = {
+                Name: this.newTask.toUpperCase,
+                DefaultPoint: this.Point,
+                ManualPoint: this.newPoint
+              };
+            this.api.postData("tasks", task).then(
               res => {
                 //console.log(res)
-                 this.getTasks()
-                this.tasksId =res.data.id;
+                this.getTasks();
+                this.tasksId = res.data.id;
                 this.Point = res.data.DefaultPoint;
-                this.tasksName = res.data.Name;
-
-               
-                /*
-                this.$q.notify({
-                        color: 'secondary',
-                        icon: 'star',
-                        message: 'Đã thêm mới công việc thành công!'
-                      })
-                      */
+                //this.tasksName = res.data.Name;
               },
               err => {
                 console.log(err);
               }
             );
-         
-       /// return;
+          },
+          err => {
+            console.log(err);
+          }
+        );
+
+        /// return;
       }
       let archives = {};
       this.searchArchives(
@@ -249,7 +263,7 @@ export default {
         this.archives.awardsId
       ).then(
         archive => {
-          console.log(archive);
+          console.log("archive ", archive);
           if (archive.constructor == Array && archive.length > 0) {
             archives = archive[0];
           } else if (archive.constructor == Array && archive.length == 0) {
@@ -257,17 +271,17 @@ export default {
             archives.TaskDone = [];
             archives.ArchivePoints = this.Point;
             archives.TaskDone.push({
-              tasksId:   this.tasksId,
-              Point:   this.Point
+              tasksId: this.tasksId,
+              Point: this.Point
             });
             this.api.postData("archives", archives).then(
               res => {
                 this.updateActivities(archives);
                 this.$q.notify({
-                        color: 'secondary',
-                        icon: 'star',
-                        message: 'Đã thêm mới thành công!'
-                      })
+                  color: "secondary",
+                  icon: "star",
+                  message: "Đã thêm mới thành công!"
+                });
               },
               err => {
                 console.log(err);
@@ -276,20 +290,19 @@ export default {
           } else {
             archives = archive;
           }
-          console.log(archives)
+          console.log(archives);
 
-         
-          archives.TaskDone.push({ tasksId:  this.tasksId, Point:   this.Point });
+          archives.TaskDone.push({ tasksId: this.tasksId, Point: this.Point });
           let pCount = 0;
           archives.ArchivePoints += this.Point;
           this.api.putData("archives/" + archives.id, archives).then(
             res => {
               this.updateActivities(archives);
               this.$q.notify({
-                        color: 'secondary',
-                        icon: 'star',
-                        message: 'Đã cập nhật thành công!'
-                      })
+                color: "secondary",
+                icon: "star",
+                message: "Đã cập nhật thành công!"
+              });
             },
             err => {
               console.log(err);

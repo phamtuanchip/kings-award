@@ -125,7 +125,7 @@ export default {
       this.api.getData("tasks").then(
         res => {
           this.items = res.data;
-          console.log(this.children);
+          
         },
         err => {
           console.log(err);

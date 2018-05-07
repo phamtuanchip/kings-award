@@ -1,7 +1,8 @@
 <template>
   <q-page padding style="max-width: 800px">
     <q-timeline color="secondary" style="padding: 0 24px;">
-      <q-timeline-entry heading>{{today}}</q-timeline-entry> 
+      <q-timeline-entry heading>{{today}}</q-timeline-entry>
+       <q-infinite-scroll :handler="refresher"> 
       <q-timeline-entry  v-for="(child,index) in children" :key="child.id"
         :title="child.Title"
         :subtitle="child.DateTime"
@@ -22,7 +23,10 @@
           </div>
         </div>
       </q-timeline-entry>
-
+      <div class="row justify-center" style="margin-bottom: 50px;">
+          <q-spinner-dots slot="message" :size="40" />
+        </div>
+       </q-infinite-scroll>
        
     </q-timeline>
   </q-page>
@@ -35,29 +39,40 @@ export default {
    data() {
        return {
            children: [],
-           today: Vue.moment().format('MMMM DD, YYYY')
+           today: Vue.moment().format('MMMM DD, YYYY'),
+           limit: 4
        }
    },
    mounted(){
-     this.getChildren()
+     this.getChildren(0)
    },
 
    methods : {
-       refresher (done) {
-          this.api.getData('activities?_sort=DateTime&_order=desc').then((res) => {
-         this.children = res.data
-         done()
-         this.$q.notify('Item #' + this.children.length + ' is new.')
-      }, (err) => {
-        console.log(err)
-      }) 
-       
+
+     refresher (index, done) {
+       console.log(index, done)
+      
+      setTimeout(() => {
+        let children = []
+         this.getChildren (index)
+//this.children = this.children.concat(children)
+        done()
+      }, 2500)
     },
      getChildren () {
       
       this.api.getData('activities?_sort=DateTime&_order=desc').then((res) => {
         this.children = res.data
          
+      }, (err) => {
+        console.log(err)
+      })
+    },
+    getChildren (index) {
+      
+      this.api.getData('activities?_sort=DateTime&_order=desc&_start='+index+'&_limit='+this.limit).then((res) => {
+        this.children = this.children.concat(res.data);
+        
       }, (err) => {
         console.log(err)
       })

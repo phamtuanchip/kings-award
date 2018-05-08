@@ -151,6 +151,27 @@
         }
       ],
       "id": 6
+    },
+    {
+      "DateTime": "05/08/2018",
+      "childrenId": "",
+      "awardsId": "1",
+      "ArchivePoints": "4",
+      "TaskDone": [
+        {
+          "tasksId": "",
+          "Point": 2
+        },
+        {
+          "tasksId": "",
+          "Point": 2
+        },
+        {
+          "tasksId": "",
+          "Point": ""
+        }
+      ],
+      "id": 7
     }
   ],
   "tasks": [
@@ -703,6 +724,22 @@
       "ItemText": "Đã hoàn thành ",
       "ItemInerText": "Con đang được xếp hạng: ",
       "id": 64
+    },
+    {
+      "DateTime": "2018-05-08 03:41",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã đạt được 4 điểm",
+      "ItemText": "Đã hoàn thành ",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 65
+    },
+    {
+      "DateTime": "2018-05-08 11:27",
+      "Title": "Chúc mừng ",
+      "SubTitle": "Đã đạt được 4 điểm",
+      "ItemText": "Đã hoàn thành ",
+      "ItemInerText": "Con đang được xếp hạng: ",
+      "id": 66
     }
   ]
 }

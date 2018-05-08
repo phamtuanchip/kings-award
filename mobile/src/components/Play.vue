@@ -53,7 +53,7 @@
       <q-field
         icon="local florist"
         label="Việc bé đã làm"
-       
+        v-show="false"
       >
         <q-select
           float-label="Con đã thực hiện:"
@@ -68,7 +68,12 @@
         
         
       >
-        <q-input  v-model="newTask" float-label="Nhập công việc mới" />
+         <q-search v-model="newTask" placeholder="Start typing a country name">
+        <q-autocomplete @search="search" @selected="selected" />
+      </q-search>
+
+         
+
       </q-field>
      
       <q-field 
@@ -105,6 +110,7 @@
 </template>
 <script>
 import Vue from "vue";
+import { uid, filter } from 'quasar'
 export default {
   data() {
     return {
@@ -150,6 +156,9 @@ export default {
         return ta.value == newVal;
       });
       if (child.length >= 1) this.childrenName = child[0].label;
+    },
+    newTask : function(newVal) {
+      this.newTask = newVal.toUpperCase()
     }
   },
   mounted() {
@@ -199,9 +208,18 @@ export default {
         }
       );
     },
+     search (terms, done) {
+      setTimeout(() => {
+        done(filter(terms, {field: 'label', list: this.tasks}))
+      }, 1000)
+    },
+    selected (item) {
+      //this.$q.notify(`Selected suggestion "${item.label}"`)
+      this.tasksId = item.value;
+    },
     searchTaskByName(name) {
       //?title=json-server&author=typicode
-
+      
       let promise = new Promise((resolve, reject) => {
         let task = undefined;
         this.api.getData("tasks?Name=" + name.toUpperCase()).then(

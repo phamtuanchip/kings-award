@@ -1,0 +1,10 @@
+src/
+webpack.config.js
+travis.yml
+.vscode
+.prettierrc
+demo/
+coverage/
+.git/
+scripts/
+demo.png

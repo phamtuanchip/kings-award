@@ -1,0 +1,19 @@
+dist: trusty
+notifications:
+  email: false
+
+cache:
+  yarn: true
+  directories:
+    - node_modules
+
+language: node_js
+
+node_js:
+  - "9"
+
+install:
+  - yarn install
+
+script:
+  - yarn now-build
